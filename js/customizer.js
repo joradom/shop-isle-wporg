@@ -98,6 +98,18 @@
 		} );
 	} );
 
+	// Add new banner (Repeater)
+	wp.customize( "shop_isle_banners", function( value ) {
+		value.bind( function( to ) {
+			var obj = JSON.parse( to );
+			var result ="";
+			obj.forEach(function(item) {
+			result += '<div class="col-sm-4"><div class="content-box mt-0 mb-0"><div class="content-box-image"><a href="' + item.link + '"><img src="' + item.image_url + '"></a></div></div></div>';
+			});
+			$( '.shop_isle_bannerss_section' ).html( result );
+		} );
+	} );
+
 	/*********************************/
     /*******  Products section *******/
 	/********************************/
@@ -194,6 +206,18 @@
 		} );
 	} );
 
+	// socials (Repeater)
+	wp.customize( "shop_isle_socials", function( value ) {
+		value.bind( function( to ) {
+			var obj = JSON.parse( to );
+			var result ="";
+			obj.forEach(function(item) {
+				result+=  '<a href="' + item.link + '" class="social-icon"><i class="fa ' + item.icon_value + '"></i></a>';
+			});
+			$( '.footer-social-links' ).html( result );
+		} );
+	} );
+
 	/*********************************/
 	/******  About us page  **********/
 	/*********************************/
@@ -238,7 +262,7 @@
 			$( '.our_advantages' ).text( to );
 		} );
 	} );
-
+ 
 	/*********************************/
 	/**********  404 page  ***********/
 	/*********************************/

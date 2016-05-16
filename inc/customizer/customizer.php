@@ -121,6 +121,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Banner */
 	$wp_customize->add_setting( 'shop_isle_banners', array(
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'shop_isle_sanitize_repeater',
 		'default' => json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/banner1.jpg' ,'link' => '#' ),array('image_url' => get_template_directory_uri().'/assets/images/banner2.jpg' ,'link' => '#'),array('image_url' => get_template_directory_uri().'/assets/images/banner3.jpg' ,'link' => '#') ))
 	));
@@ -392,6 +393,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* socials */
 	$wp_customize->add_setting( 'shop_isle_socials', array(
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'shop_isle_sanitize_repeater',
 		'default' => json_encode(array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'social_twitter' ,'link' => '#'), array('icon_value' => 'social_dribbble' ,'link' => '#'), array('icon_value' => 'social_skype' ,'link' => '#') )),
 	));
