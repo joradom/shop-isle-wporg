@@ -81,7 +81,6 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_slider', array(
 		'label'   => __('Add new slide','shop-isle'),
 		'section' => 'shop_isle_slider_section',
-		'active_callback' => 'is_front_page',
 		'priority' => 2,
         'shop_isle_image_control' => true,
         'shop_isle_text_control' => true,
@@ -128,7 +127,6 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_banners', array(
 		'label'   => __('Add new banner','shop-isle'),
 		'section' => 'shop_isle_banners_section',
-		'active_callback' => 'is_front_page',
 		'priority' => 2,
         'shop_isle_image_control' => true,
         'shop_isle_link_control' => true,
@@ -400,7 +398,6 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_socials', array(
 		'label'   => __('Add new social','shop-isle'),
 		'section' => 'shop_isle_footer_section',
-		'active_callback' => 'is_front_page',
 		'priority' => 3,
         'shop_isle_image_control' => false,
         'shop_isle_link_control' => true,
@@ -637,13 +634,6 @@ function shop_isle_is_contact_page() {
 };
 function shop_isle_is_not_contact_page() { 
 	return !is_page_template('template-contact.php');
-};
-
-function shop_isle_is_aboutus_page() { 
-	return is_page_template('template-about.php');
-};
-function shop_isle_is_not_aboutus_page() { 
-	return !is_page_template('template-about.php');
 };
 
 function shop_isle_sanitize_repeater($input){
