@@ -85,7 +85,7 @@ if ( ! function_exists( 'shop_isle_footer_copyright_and_socials' ) ) {
 							echo '<p class="copyright font-alt">'.$shop_isle_copyright.'</p>';
 							$shop_isle_site_info_hide = get_theme_mod('shop_isle_site_info_hide');
 							if( isset($shop_isle_site_info_hide) && $shop_isle_site_info_hide != 1 ): ?>
-							<p class="shop-isle-poweredby-box"><a class="shop-isle-poweredby" href="http://themeisle.com/themes/shop-isle/" rel="nofollow">ShopIsle </a><?php _e('powered by','shop-isle'); ?><a class="shop-isle-poweredby" href="http://wordpress.org/" rel="nofollow"> WordPress</a></p>
+							<p class="shop-isle-poweredby-box"><a class="shop-isle-poweredby" href="http://themeisle.com/themes/shop-isle/" rel="nofollow">Shop Isle </a><?php _e('powered by','shop-isle'); ?><a class="shop-isle-poweredby" href="http://wordpress.org/" rel="nofollow"> WordPress</a></p>
 							<?php
 							endif;
 						echo '</div>';

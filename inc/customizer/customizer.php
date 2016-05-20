@@ -18,6 +18,11 @@ function shop_isle_customize_register( $wp_customize ) {
 			echo __( 'To customize the Contact Page you need to first select the template "Contact page" for the page you want to use for this purpose. Then open that page in the browser and press "Customize" in the top bar.','shop-isle' ).'<br><br>'. __( 'Need further assistance? Check out this','shop-isle' ).' <a href="http://docs.themeisle.com/article/211-shopisle-customizing-the-contact-and-about-us-page" target="_blank">'.__( 'doc','shop-isle' ).'</a>';
 		}
 	}
+	class ShopIsle_Front_Page_Instructions extends WP_Customize_Control {
+		public function render_content() {
+			echo __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Static Front Page and under "Static Front Page" select "A static page". Finally, for "Front page" choose the page you previously created.','shop-isle' ).'<br><br>'.__( 'Need further informations? Check this','shop-isle' ).' <a href="http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one">'.__( 'doc','shop-isle').'</a>';
+		}
+	}
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 
@@ -45,14 +50,41 @@ function shop_isle_customize_register( $wp_customize ) {
 		'section'  => 'shop_isle_header_section',
 		'priority'    => 1,
 	)));
-	
+
+	/***********************************************************************************/
+	/******  Frontpage - instructions for users when not on Frontpage template *********/
+	/***********************************************************************************/
+
+	$wp_customize->add_section( 'shop_isle_front_page_instructions', array(
+		'title'    => __( 'Frontpage settings', 'shop-isle' ),
+		'priority' => 41
+	) );
+
+	$wp_customize->add_setting( 'shop_isle_front_page_instructions', array(
+		'sanitize_callback' => 'shop_isle_sanitize_text'
+	) );
+
+	$wp_customize->add_control( new ShopIsle_Front_Page_Instructions( $wp_customize, 'shop_isle_front_page_instructions', array(
+		'section' => 'shop_isle_front_page_instructions'
+	)));
+
+	/****************************************************************/
+	/******************  	FRONTPAGE SECTIONS    *******************/
+	/****************************************************************/
+
+	$wp_customize->add_panel( 'shop_isle_front_page_sections', array(
+		'title'    => __( 'Frontpage sections', 'shop-isle' ),
+		'priority' => 42
+	) );
+
 	/*******************************/
 	/******    Slider section ******/
 	/*******************************/
 	
 	$wp_customize->add_section( 'shop_isle_slider_section' , array(
 		'title'       => __( 'Slider section', 'shop-isle' ),
-		'priority'    => 41
+		'priority'    => 41,
+		'panel' => 'shop_isle_front_page_sections'
 	));
 	
 	/* Hide slider */
@@ -81,7 +113,6 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_slider', array(
 		'label'   => __('Add new slide','shop-isle'),
 		'section' => 'shop_isle_slider_section',
-		'active_callback' => 'is_front_page',
 		'priority' => 2,
         'shop_isle_image_control' => true,
         'shop_isle_text_control' => true,
@@ -99,7 +130,8 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'shop_isle_banners_section' , array(
 		'title'       => __( 'Banners section', 'shop-isle' ),
-		'priority'    => 42
+		'priority'    => 42,
+		'panel' => 'shop_isle_front_page_sections'
 	));
 	
 	/* Hide banner */
@@ -121,13 +153,13 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Banner */
 	$wp_customize->add_setting( 'shop_isle_banners', array(
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'shop_isle_sanitize_repeater',
 		'default' => json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/banner1.jpg' ,'link' => '#' ),array('image_url' => get_template_directory_uri().'/assets/images/banner2.jpg' ,'link' => '#'),array('image_url' => get_template_directory_uri().'/assets/images/banner3.jpg' ,'link' => '#') ))
 	));
 	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_banners', array(
 		'label'   => __('Add new banner','shop-isle'),
 		'section' => 'shop_isle_banners_section',
-		'active_callback' => 'is_front_page',
 		'priority' => 2,
         'shop_isle_image_control' => true,
         'shop_isle_link_control' => true,
@@ -148,7 +180,8 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'shop_isle_products_section' , array(
 		'title'       => __( 'Products section', 'shop-isle' ),
 		'description' => __( 'If no shortcode or no category is selected , WooCommerce latest products are displaying.', 'shop-isle' ),
-		'priority'    => 43
+		'priority'    => 43,
+		'panel' => 'shop_isle_front_page_sections'
 	));
 	
 	/* Hide products */
@@ -224,7 +257,8 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'shop_isle_video_section' , array(
 		'title'       => __( 'Video section', 'shop-isle' ),
-		'priority'    => 44
+		'priority'    => 44,
+		'panel' => 'shop_isle_front_page_sections'
 	));
 	
 	/* Hide video */
@@ -271,7 +305,8 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'shop_isle_products_slider_section' , array(
 		'title'       => __( 'Products slider section', 'shop-isle' ),
 		'description' => __( 'If no category is selected , WooCommerce products from the first category found are displaying.', 'shop-isle' ),
-		'priority'    => 45
+		'priority'    => 45,
+		'panel' => 'shop_isle_front_page_sections'
 	));
 	
 	/* Hide products slider on frontpage */
@@ -392,13 +427,13 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* socials */
 	$wp_customize->add_setting( 'shop_isle_socials', array(
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'shop_isle_sanitize_repeater',
 		'default' => json_encode(array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'social_twitter' ,'link' => '#'), array('icon_value' => 'social_dribbble' ,'link' => '#'), array('icon_value' => 'social_skype' ,'link' => '#') )),
 	));
 	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_socials', array(
 		'label'   => __('Add new social','shop-isle'),
 		'section' => 'shop_isle_footer_section',
-		'active_callback' => 'is_front_page',
 		'priority' => 3,
         'shop_isle_image_control' => false,
         'shop_isle_link_control' => true,
@@ -601,6 +636,33 @@ function shop_isle_customize_register( $wp_customize ) {
 		'section' => 'shop_isle_general_section',
 		'priority'    => 7,
 	));
+
+
+	/* Body font size */
+	$wp_customize->add_setting(
+		'shop_isle_font_size',
+		array(
+			'default' => '13px',
+		)
+	);
+
+	$wp_customize->add_control(
+		'shop_isle_font_size',
+		array(
+			'type' 		=> 'select',
+			'label' 	=> 'Select font size:',
+			'section' 	=> 'shop_isle_general_section',
+			'choices' 	=> array(
+				'12px' => '12px',
+				'13px' => '13px',
+				'14px' => '14px',
+				'15px' => '15px',
+				'16px' => '16px',
+			),
+		)
+	);
+ 
+
 }
 
 function shop_isle_is_contact_page() { 
@@ -608,13 +670,6 @@ function shop_isle_is_contact_page() {
 };
 function shop_isle_is_not_contact_page() { 
 	return !is_page_template('template-contact.php');
-};
-
-function shop_isle_is_aboutus_page() { 
-	return is_page_template('template-about.php');
-};
-function shop_isle_is_not_aboutus_page() { 
-	return !is_page_template('template-about.php');
 };
 
 function shop_isle_sanitize_repeater($input){

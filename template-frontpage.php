@@ -269,6 +269,9 @@
 															if(function_exists('wccm_add_button')) {
 																wccm_add_button();
 															}
+															if ( defined( 'YITH_WCQV' ) ) {
+																echo '<a href="#" class="button yith-wcqv-button" data-product_id="' . get_the_ID() . '">'.__( 'Quick View','shop-isle' ).'</a>';
+															}
 														}	
 													echo '</div><!-- .shop-item-detail -->';
 												echo '</div><!-- .shop-item-image -->';
@@ -364,7 +367,10 @@
 															echo do_shortcode( '[add_to_cart id="' . $shop_isle_latest_loop->post->ID . '"]' );
 															if(function_exists('wccm_add_button')) {
 																wccm_add_button();
-															}	
+															}
+															if ( defined( 'YITH_WCQV' ) ) {
+																echo '<a href="#" class="button yith-wcqv-button" data-product_id="' . get_the_ID() . '">'.__( 'Quick View','shop-isle' ).'</a>';
+															}
 														}
 													echo '</div><!-- .shop-item-detail -->';
 												echo '</div><!-- .shop-item-image -->';

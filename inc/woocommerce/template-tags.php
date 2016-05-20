@@ -69,7 +69,7 @@ function shop_isle_sorting_wrapper_close() {
 }
 
 /**
- * ShopIsle shop messages
+ * Shop Isle shop messages
  * @since   1.4.4
  * @uses    do_shortcode
  */
