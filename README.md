@@ -1,4 +1,4 @@
-== ShopIsle ==
+== Shop Isle ==
 
 Images sources:
 

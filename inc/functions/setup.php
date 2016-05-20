@@ -1,6 +1,6 @@
 <?php
 /**
- * ShopIsle setup functions
+ * Shop Isle setup functions
  *
  */
 
@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 /**
- * Assign the ShopIsle version to a var
+ * Assign the Shop Isle version to a var
  */
 $theme 					= wp_get_theme();
 $shop_isle_version 	= $theme['Version'];
