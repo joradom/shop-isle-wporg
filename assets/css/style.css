@@ -4042,8 +4042,8 @@ Responsive Media Querries
 
 @media (min-width: 768px) {
 
-	body.home .navbar-transparent {
-		background: transparent;
+	body.page-template-template-frontpage .navbar-transparent {
+		background: transparent !important;
 		padding-bottom: 15px;
 		padding-top: 15px;
 	}

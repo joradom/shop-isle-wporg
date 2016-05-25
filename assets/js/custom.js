@@ -54,7 +54,7 @@
 					homeSection.height($(window).height() * 0.85);
 				}
 			} else {
-				if( $('body.home' ).length>0 && homeSection.length<1 ) {
+				if( $('body.page-template-template-frontpage' ).length>0 && homeSection.length<1 ) {
 					$('.main').css('margin-top', $('.navbar-custom').outerHeight() );
 				}
 			}
