@@ -1,3 +1,10 @@
+<?php
+/**
+ * The template used for displaying page content in template-contact.php
+ *
+ * @package shop-isle
+ */
+?>
 		<section class="module">
 			<div class="container">
 

@@ -1,3 +1,8 @@
+<?php
+/**
+* The template for rendering the blog posts index, whether it is being used as the front page or on separate static page.
+*/
+?>
 <?php get_header(); ?>
 
 	<!-- Wrapper start -->
