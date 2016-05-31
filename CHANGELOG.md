@@ -6,6 +6,8 @@
 
 - Add file description for all the theme files
 
+- Put back Site identity
+
 ### 1.1.6.1.2 - 25/05/2016
 
 **Changes:**
