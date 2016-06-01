@@ -54,7 +54,7 @@
 					homeSection.height($(window).height() * 0.85);
 				}
 			} else {
-				if( $('body.home' ).length>0 && homeSection.length<1 ) {
+				if( $('body.page-template-template-frontpage' ).length>0 && homeSection.length<1 ) {
 					$('.main').css('margin-top', $('.navbar-custom').outerHeight() );
 				}
 			}
@@ -354,7 +354,7 @@
 	$("#review_form form :input").each(function(index, elem) {
 		var eId = $(elem).attr("id");
 		var label = null;
-		if (eId && (label = $(elem).parents("form").find("label[for="+eId+"]")).length == 1) {
+		if (eId && (eId != 'subscribe_blog') && (label = $(elem).parents("form").find("label[for="+eId+"]")).length == 1) {
 			$(elem).attr("placeholder", $(label).text());
 			$(label).remove();
 		}

@@ -613,9 +613,8 @@ function shop_isle_customize_register( $wp_customize ) {
 		$page_for_posts->section = 'shop_isle_general_section';
 		$page_for_posts->priority = 5;
 	endif;
-	
-	$wp_customize->remove_section('static_front_page');
-	$wp_customize->remove_section('title_tagline');
+
+	$wp_customize->remove_control('display_header_text');
 	
 	$nav_menu_locations_primary = $wp_customize->get_control('nav_menu_locations[primary]');
 	if(!empty($nav_menu_locations_primary)){

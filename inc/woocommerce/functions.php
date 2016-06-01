@@ -242,18 +242,6 @@ function shop_isle_header_shop_page( $page_title ) {
 						$shop_isle_title .= '<h1 class="module-title font-alt">'.$page_title.'</h1>';
 
 					endif;
-
-					$shop_isle_shop_id = get_option( 'woocommerce_shop_page_id' );
-
-					if( !empty($shop_isle_shop_id) ):
-
-						$shop_isle_page_description = get_post_meta($shop_isle_shop_id, 'shop_isle_page_description');
-
-						if( !empty($shop_isle_page_description[0]) ):
-							$shop_isle_title .= '<div class="module-subtitle font-serif mb-0">'.$shop_isle_page_description[0].'</div>';
-						endif;
-
-					endif;
 				
 				$shop_isle_title .= '</div>';
 
@@ -274,64 +262,6 @@ function shop_isle_cart_item_thumbnail( $thumb, $cart_item, $cart_item_key ) {
 	$product = get_product( $cart_item['product_id'] );
 	return $product->get_image( 'shop_isle_cart_item_image_size' ); 
 	
-}
-
-
-/**
- * Add meta box for page header description
- * @since  1.0.0
- */
-function shop_isle_page_description_box() {
-	add_meta_box('shop_isle_post_info', __('Header description','shop-isle'), 'shop_isle_page_description_box_callback', 'page', 'side', 'high');
-}
-
-/**
- * Add meta box for page header description - callback
- * @since  1.0.0
- */
-function shop_isle_page_description_box_callback() {
-	global $post;
-	?>
-	<fieldset>
-		<div>
-			<p>
-				<label for="shop_isle_page_description"><?php _e('Description','shop-isle'); ?></label><br />
-				<?php wp_editor( get_post_meta($post->ID, 'shop_isle_page_description', true), 'shop_isle_page_description' ); ?>
-			</p>
-		</div>
-	</fieldset>
-	<?php
-}
-
-
-
-/**
- * Add meta box for page header description - save meta box
- * @since  1.0.0
- */
-function shop_isle_custom_add_save($postID){
-
-	if($parent_id = wp_is_post_revision($postID))
-	{
-		$postID = $parent_id;
-	}
-	if (isset($_POST['shop_isle_page_description'])) {
-		shop_isle_update_custom_meta($postID, $_POST['shop_isle_page_description'], 'shop_isle_page_description');
-	}
-}
-
-/**
- * Add meta box for page header description - update meta box
- * @since  1.0.0
- */
-function shop_isle_update_custom_meta($postID, $newvalue, $field_name) {
-	// To create new meta
-	if(!get_post_meta($postID, $field_name)){
-		add_post_meta($postID, $field_name, $newvalue);
-	}else{
-	// or to update existing meta
-		update_post_meta($postID, $field_name, $newvalue);
-	}
 }
 
 /**

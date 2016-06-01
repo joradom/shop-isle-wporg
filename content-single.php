@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template used for displaying post content in single.php
+ *
+ * @package shop-isle
+ */
+?>
+<?php
 	/**
 	 * @hooked shop_isle_post_header - 10
 	 * @hooked shop_isle_post_meta - 20
