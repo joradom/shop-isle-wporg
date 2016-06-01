@@ -8,6 +8,8 @@
 
 - Put back Site identity
 
+- Removed page description meta box
+
 ### 1.1.6.1.2 - 25/05/2016
 
 **Changes:**
