@@ -32,23 +32,6 @@ endif;
 
 				<h1 class="module-title font-alt"><?php the_title(); ?></h1>
 
-				<?php
-
-				/* Header description */
-
-				$shop_isle_shop_id = get_the_ID();
-
-				if( !empty($shop_isle_shop_id) ):
-
-					$shop_isle_page_description = get_post_meta($shop_isle_shop_id, 'shop_isle_page_description');
-
-					if( !empty($shop_isle_page_description[0]) ):
-						echo '<div class="module-subtitle font-serif mb-0">'.$shop_isle_page_description[0].'</div>';
-					endif;
-
-				endif;
-				?>
-
 			</div><!-- .col-sm-6 col-sm-offset-3 -->
 
 		</div><!-- .row -->

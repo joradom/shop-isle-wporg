@@ -105,11 +105,6 @@ add_action( 'wp_enqueue_scripts', 'shop_isle_woocommerce_integrations_scripts' )
 */
 add_filter( 'woocommerce_cart_item_thumbnail', 'shop_isle_cart_item_thumbnail', 10, 3 );
 
-
-/* Meta box for header description on shop page */
-add_action('admin_menu', 'shop_isle_page_description_box');
-add_action('save_post', 'shop_isle_custom_add_save');
-
 /* WooCommerce compare list plugin */
 if( function_exists('wccm_render_catalog_compare_info') ) {
 	
