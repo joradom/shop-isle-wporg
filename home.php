@@ -23,7 +23,28 @@ endif;
 
 			<div class="col-sm-10 col-sm-offset-1">
 
-				<h1 class="module-title font-alt"><?php _e('Blog','shop-isle'); ?></h1>
+				<?php
+
+				global $wp_customize;
+
+				$shop_isle_blog_header_title = get_theme_mod( 'shop_isle_blog_header_title', __( 'Blog','shop-isle' )  );
+				if( !empty($shop_isle_blog_header_title) ) {
+					echo '<h1 class="module-title font-alt shop-isle-blog-header-title">';
+						echo $shop_isle_blog_header_title;
+					echo '</h1>';
+				} elseif ( isset( $wp_customize ) ) {
+					echo '<h1 class="module-title font-alt shop-isle-blog-header-title shop_isle_hidden_if_not_customizer"></h1>';
+				}
+
+				$shop_isle_blog_header_subtitle = get_theme_mod( 'shop_isle_blog_header_subtitle', __( 'This Theme Supports a Custom FrontPage','shop-isle' ) );
+				if( !empty($shop_isle_blog_header_subtitle) ) {
+					echo '<div class="module-subtitle font-serif mb-0 shop-isle-blog-header-subtitle">';
+						echo $shop_isle_blog_header_subtitle;
+					echo '</div>';
+				} elseif ( isset( $wp_customize ) ) {
+					echo '<div class="module-subtitle font-serif mb-0 shop-isle-blog-header-subtitle shop_isle_hidden_if_not_customizer"></div>';
+				}
+				?>
 
 			</div><!-- .col-sm-10 col-sm-offset-1 -->
 
