@@ -609,22 +609,10 @@ function shop_isle_customize_register( $wp_customize ) {
 		'title'       => __( 'Advanced options', 'shop-isle' ),
       	'priority'    => 55
 	));
-	
-	$blogname = $wp_customize->get_control('blogname');
-	$blogdescription = $wp_customize->get_control('blogdescription');
+
 	$show_on_front = $wp_customize->get_control('show_on_front');
 	$page_on_front = $wp_customize->get_control('page_on_front');
 	$page_for_posts = $wp_customize->get_control('page_for_posts');
-	
-	if(!empty($blogname)):
-		$blogname->section = 'shop_isle_general_section';
-		$blogname->priority = 1;
-	endif;
-	
-	if(!empty($blogdescription)):
-		$blogdescription->section = 'shop_isle_general_section';
-		$blogdescription->priority = 2;
-	endif;
 	
 	if(!empty($show_on_front)):
 		$show_on_front->section = 'shop_isle_general_section';
