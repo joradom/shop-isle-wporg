@@ -1,3 +1,15 @@
+### 1.1.6.1.5 - 10/06/2016
+
+**Changes:**
+
+- Replace the screenshot
+
+- Move title and tagline in the Site identity section in Customize
+
+- Added licenses for all used resources
+
+- Remove unused js file
+
 ### 1.1.6.1.3 - 31/05/2016
 
 **Changes:**

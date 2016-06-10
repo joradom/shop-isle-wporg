@@ -65,6 +65,30 @@
 
 		} );
 	} );
+
+	wp.customize( 'shop_isle_blog_header_title', function( value ) {
+		value.bind( function( to ) {
+			if( to != '' ) {
+				$( '.shop-isle-blog-header-title' ).removeClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+			else {
+				$( '.shop-isle-blog-header-title' ).addClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+			$( '.shop-isle-blog-header-title' ).html( to );
+		} );
+	} );
+
+	wp.customize( 'shop_isle_blog_header_subtitle', function( value ) {
+		value.bind( function( to ) {
+			if( to != '' ) {
+				$( '.shop-isle-blog-header-subtitle' ).removeClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+			else {
+				$( '.shop-isle-blog-header-subtitle' ).addClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+			$( '.shop-isle-blog-header-subtitle' ).html( to );
+		} );
+	} );
 	
 	/*******************************/
 	/******    Slider section ******/

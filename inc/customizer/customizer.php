@@ -51,6 +51,33 @@ function shop_isle_customize_register( $wp_customize ) {
 		'priority'    => 1,
 	)));
 
+	$wp_customize->get_control( 'header_image' )->section = 'shop_isle_header_section' ;
+	$wp_customize->get_control( 'header_image' )->priority = '2';
+
+	/* Blog Header title */
+	$wp_customize->add_setting( 'shop_isle_blog_header_title', array(
+		'default' 			=> __( 'Blog','shop-isle' ),
+		'sanitize_callback' => 'shop_isle_sanitize_text',
+		'transport' 		=> 'postMessage'
+	));
+	$wp_customize->add_control( 'shop_isle_blog_header_title', array(
+		'label'    			=> esc_html__( 'Blog header title', 'shop-isle' ),
+		'section'  			=> 'shop_isle_header_section',
+		'priority'    		=> 3
+	));
+
+	/* Blog Header subtitle */
+	$wp_customize->add_setting( 'shop_isle_blog_header_subtitle', array(
+		'default' 			=> __( 'This Theme Supports a Custom FrontPage','shop-isle' ),
+		'sanitize_callback' => 'shop_isle_sanitize_text',
+		'transport' 		=> 'postMessage'
+	));
+	$wp_customize->add_control( 'shop_isle_blog_header_subtitle', array(
+		'label'    			=> esc_html__( 'Blog header subtitle', 'shop-isle' ),
+		'section'  			=> 'shop_isle_header_section',
+		'priority'    		=> 4
+	));
+
 	/***********************************************************************************/
 	/******  Frontpage - instructions for users when not on Frontpage template *********/
 	/***********************************************************************************/
@@ -582,22 +609,10 @@ function shop_isle_customize_register( $wp_customize ) {
 		'title'       => __( 'Advanced options', 'shop-isle' ),
       	'priority'    => 55
 	));
-	
-	$blogname = $wp_customize->get_control('blogname');
-	$blogdescription = $wp_customize->get_control('blogdescription');
+
 	$show_on_front = $wp_customize->get_control('show_on_front');
 	$page_on_front = $wp_customize->get_control('page_on_front');
 	$page_for_posts = $wp_customize->get_control('page_for_posts');
-	
-	if(!empty($blogname)):
-		$blogname->section = 'shop_isle_general_section';
-		$blogname->priority = 1;
-	endif;
-	
-	if(!empty($blogdescription)):
-		$blogdescription->section = 'shop_isle_general_section';
-		$blogdescription->priority = 2;
-	endif;
 	
 	if(!empty($show_on_front)):
 		$show_on_front->section = 'shop_isle_general_section';
