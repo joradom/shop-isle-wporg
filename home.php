@@ -12,7 +12,7 @@
 <?php
 $shop_isle_header_image = get_header_image();
 if( !empty($shop_isle_header_image) ):
-	echo '<section class="page-header-module module bg-dark" data-background="'.$shop_isle_header_image.'">';
+	echo '<section class="page-header-module module bg-dark" data-background="'.esc_url($shop_isle_header_image).'">';
 else:
 	echo '<section class="page-header-module module bg-dark">';
 endif;
@@ -57,7 +57,7 @@ echo '</section><!-- .module -->';
 ?>
 	<!-- Header section end -->
 
-	<!-- Blog standar start -->
+	<!-- Blog standard start -->
 <?php
 
 	if ( have_posts() ) {
@@ -141,11 +141,8 @@ echo '</section><!-- .module -->';
 
 			</div>
 		</section>
-		<!-- Blog standar end -->
-
+		<!-- Blog standard end -->
 		<?php
-		/* Restore original Post Data */
-		wp_reset_postdata();
 	}
 
  get_footer(); ?>
