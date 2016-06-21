@@ -2562,6 +2562,11 @@ Services, Content box
 	margin: 16px 0 15px;
 }
 
+.add_to_cart_button {
+	text-align: center;
+	width: 100%;
+}
+
 /* -------------------------------------------------------------------
 Restaurant menu
 ------------------------------------------------------------------- */
@@ -2670,6 +2675,19 @@ Team
 	-webkit-transform: translateY(50%);
 	   -moz-transform: translateY(50%);
 	        transform: translateY(50%);
+}
+
+.about-team-member .fadeInUp {
+	padding-bottom: 60px;
+	display: inline-block;
+	float: none;
+}
+
+.about-team-member > ul {
+	margin-bottom: -60px;
+	float: left;
+	width: 100%;
+	text-align: center;
 }
 
 /* -------------------------------------------------------------------
@@ -4129,6 +4147,15 @@ Responsive Media Querries
     	float: none;
 	}
 
+	.module-advantages .multi-columns-row {
+		text-align: center;
+	}
+
+	.module-advantages .multi-columns-row div.col-sm-6 {
+		float: none;
+		display: inline-block;
+	}
+
 }
 
 @media (max-width: 1200px) {
@@ -4416,6 +4443,9 @@ Responsive Media Querries
 		display: none !important;
 	}
 
+	.about-team-member .fadeInUp {
+		max-width: 300px;
+	}
 }
 
 @media only screen and (max-width: 480px) {
