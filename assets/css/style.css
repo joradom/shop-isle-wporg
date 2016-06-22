@@ -4411,7 +4411,8 @@ Responsive Media Querries
 	}
 
 	.copyright,
-	.footer-social-links {
+	.footer-social-links,
+	.shop-isle-poweredby-box {
 		text-align: center;
 		margin: 10px 0;
 	}
