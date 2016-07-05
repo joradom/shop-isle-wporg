@@ -1,3 +1,17 @@
+### 1.1.6.1.7 - 05/07/2016
+
+**Changes:**
+
+- Fixed issue with slider arrows on IE and Edge
+
+- Fixed layout issue with slider when WooCommerce not installed
+
+- Fixed responsive issue with menu on tablets
+
+- Removed prefixes from enqueued libraries
+
+- Added a unique prefix for functions
+
 ### 1.1.6.1.6 - 15/06/2016
 
 **Changes:**
