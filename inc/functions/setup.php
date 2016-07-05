@@ -182,13 +182,13 @@ function shop_isle_scripts() {
 		
 	wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/assets/css/magnific-popup.css', array(), '20120206', "all"  );
 	
-	wp_enqueue_style( 'flexslider', get_template_directory_uri() . '/assets/css/flexslider.css', array('shop-isle-magnific-popup'), '20120206', "all"  );
+	wp_enqueue_style( 'flexslider', get_template_directory_uri() . '/assets/css/flexslider.css', array('magnific-popup'), '20120206', "all"  );
 
-	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', array('shop-isle-flexslider'), '20120206', "all"  );
+	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', array('flexslider'), '20120206', "all"  );
 
-	wp_enqueue_style( 'shop-isle-animate', get_template_directory_uri() . '/assets/css/animate.css', array('shop-isle-owl-carousel'), '20120206', "all"  );
+	wp_enqueue_style( 'shop-isle-animate', get_template_directory_uri() . '/assets/css/animate.css', array('owl-carousel'), '20120206', "all"  );
 
-	wp_enqueue_style( 'shop-isle-main-style', get_template_directory_uri() . '/assets/css/style.css', array('shop-isle-bootstrap'), '20120206', "all" );
+	wp_enqueue_style( 'shop-isle-main-style', get_template_directory_uri() . '/assets/css/style.css', array('bootstrap'), '20120206', "all" );
 	
 	wp_enqueue_style( 'shop-isle-style', get_stylesheet_uri(), '', $shop_isle_version );
 	
@@ -210,7 +210,7 @@ function shop_isle_scripts() {
 	
 	wp_enqueue_script( 'owl-carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '20120206', true );
 	
-	wp_enqueue_script( 'shop-isle-custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery','shop-isle-flexslider','shop-isle-jquery-mb-YTPlayer'), '20120206', true );
+	wp_enqueue_script( 'shop-isle-custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery','flexslider-js','jquery-mb-YTPlayer-js'), '20120206', true );
 
 	wp_enqueue_script( 'shop-isle-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
 
