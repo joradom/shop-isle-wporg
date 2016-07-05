@@ -81,7 +81,7 @@ echo '</section><!-- .module -->';
 								<?php
 								if ( has_post_thumbnail() ) {
 									echo '<div class="post-thumbnail">';
-									echo '<a href="'.get_permalink().'">';
+									echo '<a href="'.esc_url(get_permalink()).'">';
 									echo get_the_post_thumbnail($post->ID, 'shop_isle_blog_image_size');
 									echo '</a>';
 									echo '</div>';
@@ -89,7 +89,7 @@ echo '</section><!-- .module -->';
 								?>
 
 								<div class="post-header font-alt">
-									<h2 class="post-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+									<h2 class="post-title"><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a></h2>
 									<div class="post-meta">
 										<?php
 										shop_isle_posted_on();
@@ -110,7 +110,7 @@ echo '</section><!-- .module -->';
 								</div>
 
 								<div class="post-more">
-									<a href="<?php echo get_permalink(); ?>" class="more-link"><?php _e('Read more','shop-isle'); ?></a>
+									<a href="<?php echo esc_url(get_permalink()); ?>" class="more-link"><?php esc_html_e('Read more','shop-isle'); ?></a>
 								</div>
 
 							</div>

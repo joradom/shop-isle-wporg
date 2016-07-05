@@ -60,9 +60,9 @@
 													if( !empty($shop_isle_slide->subtext) ) {
 														if (function_exists ( 'icl_t' ) && !empty($shop_isle_slide->id)){												
 															$shop_isle_slider_subtext = icl_t( 'Slide '.$shop_isle_slide->id, 'Slide subtext',$shop_isle_slide->subtext );
-															echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_slider_subtext.'</div>';			
+															echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_slider_subtext.'</div>';
 														} else {
-															echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_slide->subtext.'</div>';							
+															echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_slide->subtext.'</div>';
 														}
 													}
 													
@@ -260,7 +260,7 @@
 													if (has_post_thumbnail( $shop_isle_latest_loop->post->ID )) {
 														echo get_the_post_thumbnail($shop_isle_latest_loop->post->ID, 'shop_catalog'); 
 													} elseif( function_exists('woocommerce_placeholder_img_src') ) {
-														echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="65px" height="115px" />';
+														echo '<img src="'.esc_url(woocommerce_placeholder_img_src()).'" alt="Placeholder" width="65px" height="115px" />';
 													}
 													
 													echo '<div class="shop-item-detail">';
@@ -276,7 +276,7 @@
 													echo '</div><!-- .shop-item-detail -->';
 												echo '</div><!-- .shop-item-image -->';
 												
-												echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
+												echo '<h4 class="shop-item-title font-alt"><a href="'.esc_url(get_permalink()).'">'.get_the_title().'</a></h4>';
 
 												if( function_exists( 'get_rating_html' ) ) {
 													$rating_html = $product->get_rating_html( $product->get_average_rating() );
@@ -317,7 +317,7 @@
 									echo '<div class="row mt-30">';
 										echo '<div class="col-sm-12 align-center">';
 											if( function_exists('woocommerce_get_page_id') ) {
-												echo '<a href="'.get_permalink( woocommerce_get_page_id( 'shop' )).'" class="btn btn-b btn-round">'.__('See all products','shop-isle').'</a>';
+												echo '<a href="'.esc_url(get_permalink( woocommerce_get_page_id( 'shop' ))).'" class="btn btn-b btn-round">'.__('See all products','shop-isle').'</a>';
 											}
 										echo '</div>';
 									echo '</div>';
@@ -362,7 +362,7 @@
 													if (has_post_thumbnail( $shop_isle_latest_loop->post->ID )) {
 														echo get_the_post_thumbnail($shop_isle_latest_loop->post->ID, 'shop_catalog'); 
 													} elseif( function_exists('woocommerce_placeholder_img_src') ) {
-														echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="65px" height="115px" />';
+														echo '<img src="'.esc_url(woocommerce_placeholder_img_src()).'" alt="Placeholder" width="65px" height="115px" />';
 													}
 													
 													echo '<div class="shop-item-detail">';
@@ -378,7 +378,7 @@
 													echo '</div><!-- .shop-item-detail -->';
 												echo '</div><!-- .shop-item-image -->';
 												
-												echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
+												echo '<h4 class="shop-item-title font-alt"><a href="'.esc_url(get_permalink()).'">'.get_the_title().'</a></h4>';
 
 												if( function_exists( 'get_rating_html' ) ) {
 													$rating_html = $product->get_rating_html( $product->get_average_rating() );
@@ -419,7 +419,7 @@
 								echo '<div class="row mt-30">';
 									echo '<div class="col-sm-12 align-center">';
 										if( function_exists('woocommerce_get_page_id') ) {
-											echo '<a href="'.get_permalink( woocommerce_get_page_id( 'shop' )).'" class="btn btn-b btn-round">'.__('See all products','shop-isle').'</a>';
+											echo '<a href="'.esc_url(get_permalink( woocommerce_get_page_id( 'shop' ))).'" class="btn btn-b btn-round">'.__('See all products','shop-isle').'</a>';
 										}
 									echo '</div>';
 								echo '</div>';
@@ -547,9 +547,9 @@
 										echo '<div class="col-sm-12">';
 											echo '<div class="ex-product">';
 												if( function_exists('woocommerce_get_product_thumbnail') ) {
-													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
+													echo '<a href="'.esc_url(get_permalink()).'">' . woocommerce_get_product_thumbnail().'</a>';
 												}
-												echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
+												echo '<h4 class="shop-item-title font-alt"><a href="'.esc_url(get_permalink()).'">'.get_the_title().'</a></h4>';
 												if( function_exists( 'get_rating_html' ) ) {
 													$rating_html = $product->get_rating_html( $product->get_average_rating() );
 												}
@@ -613,9 +613,9 @@
 										echo '<div class="col-sm-12">';
 											echo '<div class="ex-product">';
 												if( function_exists('woocommerce_get_product_thumbnail') ) {
-													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
+													echo '<a href="'.esc_url(get_permalink()).'">' . woocommerce_get_product_thumbnail().'</a>';
 												}
-												echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
+												echo '<h4 class="shop-item-title font-alt"><a href="'.esc_url(get_permalink()).'">'.get_the_title().'</a></h4>';
 												if( function_exists( 'get_rating_html' ) ) {
 													$rating_html = $product->get_rating_html( $product->get_average_rating() );
 												}
