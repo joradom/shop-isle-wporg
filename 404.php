@@ -44,7 +44,7 @@ get_header(); ?>
 						
 						if( !empty($shop_isle_404_link) && !empty($shop_isle_404_label) ):
 							echo '<div class="font-alt mt-30 error-page-button-text">';
-								echo '<a href="'.esc_url($shop_isle_404_link).'" class="btn btn-border-w btn-round">'.esc_attr($shop_isle_404_label).'</a>';
+								echo '<a href="'.esc_url($shop_isle_404_link).'" class="btn btn-border-w btn-round">'.esc_html($shop_isle_404_label).'</a>';
 							echo '</div>';
 						endif;
 					?>

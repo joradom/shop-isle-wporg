@@ -327,8 +327,8 @@ function shop_isle_products_slider_on_single_page() {
 										echo '<div class="owl-item">';
 											echo '<div class="col-sm-12">';
 												echo '<div class="ex-product">';
-													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
-													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
+													echo '<a href="'.esc_url(get_permalink()).'">' . woocommerce_get_product_thumbnail().'</a>';
+													echo '<h4 class="shop-item-title font-alt"><a href="'.esc_url(get_permalink()).'">'.get_the_title().'</a></h4>';
 														$product = new WC_Product( get_the_ID() );
 														$rating_html = $product->get_rating_html( $product->get_average_rating() );
 														if ( $rating_html && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
@@ -390,8 +390,8 @@ function shop_isle_products_slider_on_single_page() {
 										echo '<div class="owl-item">';
 											echo '<div class="col-sm-12">';
 												echo '<div class="ex-product">';
-													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
-													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
+													echo '<a href="'.esc_url(get_permalink()).'">' . woocommerce_get_product_thumbnail().'</a>';
+													echo '<h4 class="shop-item-title font-alt"><a href="'.esc_url(get_permalink()).'">'.get_the_title().'</a></h4>';
 														$product = new WC_Product( get_the_ID() );
 														$rating_html = $product->get_rating_html( $product->get_average_rating() );
 														if ( $rating_html && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
