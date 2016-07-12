@@ -1,3 +1,11 @@
+### 1.1.6.1.8 - 12/07/2016
+
+**Changes:**
+
+- Fixed escaping issues
+
+- Move Content width inside the setup function
+
 ### 1.1.6.1.7 - 05/07/2016
 
 **Changes:**
