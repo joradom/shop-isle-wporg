@@ -16,11 +16,11 @@
 	
 	if ( isset($shop_isle_slider_hide) && $shop_isle_slider_hide != 1 ) {		
 		echo '<section id="home" class="home-section home-parallax home-fade home-full-height">';
-	} elseif ( isset( $wp_customize ) ) {
+	} elseif ( is_customize_preview() ) {
 		echo '<section id="home" class="home-section home-parallax home-fade home-full-height shop_isle_hidden_if_not_customizer">';
 	}
 
-	if( ( isset($shop_isle_slider_hide) && $shop_isle_slider_hide != 1 ) || isset( $wp_customize ) ) {
+	if( ( isset($shop_isle_slider_hide) && $shop_isle_slider_hide != 1 ) || is_customize_preview() ) {
 
 			$shop_isle_slider = get_theme_mod('shop_isle_slider',json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/slide1.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('WooCommerce Theme','shop-isle'), 'label' => __('FIND OUT MORE','shop-isle') ), array('image_url' => get_template_directory_uri().'/assets/images/slide2.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Hight quality store','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle')), array('image_url' => get_template_directory_uri().'/assets/images/slide3.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Responsive Theme','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle') ))));
 						
@@ -127,11 +127,11 @@
 		
 		if ( isset($shop_isle_banners_hide) && $shop_isle_banners_hide != 1 ) {
 			echo '<section class="module-small home-banners">';
-		} elseif ( isset( $wp_customize ) ) {
+		} elseif ( is_customize_preview() ) {
 			echo '<section class="module-small home-banners shop_isle_hidden_if_not_customizer">';
 		}
 
-		if( ( isset($shop_isle_banners_hide) && $shop_isle_banners_hide != 1) || isset( $wp_customize ) ) {
+		if( ( isset($shop_isle_banners_hide) && $shop_isle_banners_hide != 1) || is_customize_preview() ) {
 		
 			$shop_isle_banners = get_theme_mod('shop_isle_banners', json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/banner1.jpg' ,'link' => '#' ),array('image_url' => get_template_directory_uri().'/assets/images/banner2.jpg' ,'link' => '#'), array('image_url' => get_template_directory_uri().'/assets/images/banner3.jpg' ,'link' => '#') )));
 					
@@ -199,11 +199,11 @@
 
 		if ( isset($shop_isle_products_hide) && $shop_isle_products_hide != 1 ) {		
 			echo '<section id="latest" class="module-small">';
-		} elseif ( isset( $wp_customize ) ) {
+		} elseif ( is_customize_preview() ) {
 			echo '<section id="latest" class="module-small shop_isle_hidden_if_not_customizer">';
 		}
 		
-		if( ( isset($shop_isle_products_hide) && $shop_isle_products_hide != 1 ) || isset( $wp_customize ) ) {
+		if( ( isset($shop_isle_products_hide) && $shop_isle_products_hide != 1 ) || is_customize_preview() ) {
 			
 				echo '<div class="container">';
 
@@ -454,11 +454,11 @@
 	
 	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) {	
 		echo '<section class="module module-video bg-dark-30">';
-	} elseif ( !empty($shop_isle_yt_link) && isset( $wp_customize ) ) {
+	} elseif ( !empty($shop_isle_yt_link) && is_customize_preview() ) {
 		echo '<section class="module module-video bg-dark-30 shop_isle_hidden_if_not_customizer">';
 	}
 
-	if( ( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) || ( !empty($shop_isle_yt_link) && isset( $wp_customize ) )  ) {	
+	if( ( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) || ( !empty($shop_isle_yt_link) && is_customize_preview() )  ) {
 
 			$shop_isle_video_title = get_theme_mod('shop_isle_video_title');
 			if( !empty($shop_isle_video_title) ) {
@@ -495,11 +495,11 @@
 
 	if ( isset($shop_isle_products_slider_hide) && $shop_isle_products_slider_hide != 1 ) {	
 		echo '<section class="home-product-slider">';
-	} elseif ( isset( $wp_customize ) ) {
+	} elseif ( is_customize_preview() ) {
 		echo '<section class="home-product-slider shop_isle_hidden_if_not_customizer">';
 	}
 	
-	if ( ( isset($shop_isle_products_slider_hide) && $shop_isle_products_slider_hide != 1)  || isset( $wp_customize ) ) {
+	if ( ( isset($shop_isle_products_slider_hide) && $shop_isle_products_slider_hide != 1)  || is_customize_preview() ) {
 	
 			echo '<div class="container">';
 			

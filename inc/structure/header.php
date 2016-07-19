@@ -13,8 +13,6 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 	 */
 	function shop_isle_primary_navigation() {
 
-		global $wp_customize;
-
 		?>
 		<!-- Navigation start -->
 		<nav class="navbar navbar-custom navbar-transparent navbar-fixed-top" role="navigation">
@@ -40,12 +38,12 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 							$shop_isle_logo = get_theme_mod( 'shop_isle_logo', false );
 							if ( ! empty( $shop_isle_logo ) ):
 								echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="logo-image"><img src="' . esc_url( $shop_isle_logo ) . '"></a>';
-								if ( isset( $wp_customize ) ):
+								if ( is_customize_preview() ):
 									echo '<h1 class="site-title shop_isle_hidden_if_not_customizer""><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
 									echo '<h2 class="site-description shop_isle_hidden_if_not_customizer"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'description' ) . '</a></h2>';
 								endif;
 							else:
-								if ( isset( $wp_customize ) ):
+								if ( is_customize_preview() ):
 									echo '
 											<a href="' . esc_url( home_url( '/' ) ) . '" class="logo-image shop_isle_hidden_if_not_customizer">
 												<img src="">

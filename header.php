@@ -22,10 +22,8 @@
 	<!-- Preloader -->
 	<?php
 	
-	global $wp_customize;
-	
 	/* Preloader */
-	if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 	
+	if(is_front_page() && !is_customize_preview() && get_option( 'show_on_front' ) != 'page' ):
 	
 		$shop_isle_disable_preloader = get_theme_mod('shop_isle_disable_preloader');
 		
