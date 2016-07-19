@@ -30,8 +30,7 @@ if ( ! function_exists( 'shop_isle_customizer_script' ) ) {
 
 		wp_localize_script( 'shop_isle_customizer_script', 'objectL10n', array(
 
-			'documentation' => __( 'Documentation', 'shop-isle' ),
-			'support' 				=> __( 'Support Forum','shop-isle' ),
+			'documentation' => __( 'Documentation', 'shop-isle' )
 
 		) );
 
