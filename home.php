@@ -34,7 +34,7 @@ endif;
 					echo '<h1 class="module-title font-alt shop-isle-blog-header-title shop_isle_hidden_if_not_customizer"></h1>';
 				}
 
-				$shop_isle_blog_header_subtitle = get_theme_mod( 'shop_isle_blog_header_subtitle', __( 'This Theme Supports a Custom FrontPage','shop-isle' ) );
+				$shop_isle_blog_header_subtitle = get_theme_mod( 'shop_isle_blog_header_subtitle' );
 				if( !empty($shop_isle_blog_header_subtitle) ) {
 					echo '<div class="module-subtitle font-serif mb-0 shop-isle-blog-header-subtitle">';
 						echo $shop_isle_blog_header_subtitle;

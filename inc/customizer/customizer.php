@@ -77,7 +77,6 @@ function shop_isle_customize_register( $wp_customize ) {
 
 	/* Blog Header subtitle */
 	$wp_customize->add_setting( 'shop_isle_blog_header_subtitle', array(
-		'default' 			=> __( 'This Theme Supports a Custom FrontPage','shop-isle' ),
 		'sanitize_callback' => 'shop_isle_sanitize_text',
 		'transport' 		=> 'postMessage'
 	));
