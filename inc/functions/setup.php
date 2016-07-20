@@ -31,11 +31,7 @@ if ( ! function_exists( 'shop_isle_setup' ) ) :
 		/*
 		 * Load Localisation files.
 		 *
-		 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
 		 */
-
-		// wp-content/languages/themes/shop-isle-it_IT.mo
-		load_theme_textdomain( 'shop-isle', trailingslashit( WP_LANG_DIR ) . 'themes/' );
 
 		// wp-content/themes/child-theme-name/languages/it_IT.mo
 		load_theme_textdomain( 'shop-isle', get_stylesheet_directory() . '/languages' );
