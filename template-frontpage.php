@@ -9,86 +9,58 @@
 	echo '<div class="main">';
 	
 	/******************************/
-	/********    SLIDER   *********/
+	/********    BIG TITLE   *******/
 	/******************************/
+
+	$shop_isle_big_title_hide = get_theme_mod( 'shop_isle_big_title_hide' );
 	
-	$shop_isle_slider_hide = get_theme_mod('shop_isle_slider_hide');
-	
-	if ( isset($shop_isle_slider_hide) && $shop_isle_slider_hide != 1 ) {		
+	if ( isset($shop_isle_big_title_hide) && $shop_isle_big_title_hide != 1 ) {
 		echo '<section id="home" class="home-section home-parallax home-fade home-full-height">';
 	} elseif ( is_customize_preview() ) {
 		echo '<section id="home" class="home-section home-parallax home-fade home-full-height shop_isle_hidden_if_not_customizer">';
 	}
 
-	if( ( isset($shop_isle_slider_hide) && $shop_isle_slider_hide != 1 ) || is_customize_preview() ) {
+	if( ( isset($shop_isle_big_title_hide) && $shop_isle_big_title_hide != 1 ) || is_customize_preview() ) {
 
-			$shop_isle_slider = get_theme_mod('shop_isle_slider',json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/slide1.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('WooCommerce Theme','shop-isle'), 'label' => __('FIND OUT MORE','shop-isle') ), array('image_url' => get_template_directory_uri().'/assets/images/slide2.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Hight quality store','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle')), array('image_url' => get_template_directory_uri().'/assets/images/slide3.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Responsive Theme','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle') ))));
+		$shop_isle_big_title_image = get_theme_mod( 'shop_isle_big_title_image', get_template_directory_uri().'/assets/images/slide1.jpg' );
+		$shop_isle_big_title_title = get_theme_mod( 'shop_isle_big_title_title', 'ShopIsle' );
+		$shop_isle_big_title_subtitle = get_theme_mod( 'shop_isle_big_title_subtitle', __( 'WooCommerce Theme', 'shop-isle' ) );
+		$shop_isle_big_title_button_label = get_theme_mod( 'shop_isle_big_title_button_label', __( 'Find out more', 'shop-isle' ) );
+		$shop_isle_big_title_button_link = get_theme_mod( 'shop_isle_big_title_button_link', __( '#', 'shop-isle' ) );
 						
-			if( !empty( $shop_isle_slider ) ) {
+		if( !empty( $shop_isle_big_title_image ) ) {
+
+			echo '<div class="hero-slider">';
 							
-				$shop_isle_slider_decoded = json_decode($shop_isle_slider);
-							
-				if( !empty($shop_isle_slider_decoded) ) {
-								
-					echo '<div class="hero-slider">';
-							
-						echo '<ul class="slides">';
-								
-							foreach($shop_isle_slider_decoded as $shop_isle_slide) {
+				echo '<ul class="slides">';
 									
-								if( !empty($shop_isle_slide->image_url) ) {
-									
-									if (function_exists ( 'icl_t' ) && !empty($shop_isle_slide->id)){
-										$shop_isle_slider_image_url = icl_t( 'Slide '.$shop_isle_slide->id, 'Slide image', $shop_isle_slide->image_url );
-										echo '<li class="bg-dark" style="background-image:url('. esc_url( $shop_isle_slider_image_url ).')">';
-									} else {	
-										echo '<li class="bg-dark" style="background-image:url('. esc_url( $shop_isle_slide->image_url ).')">';
+					echo '<li class="bg-dark" style="background-image:url('. esc_url( $shop_isle_big_title_image ).')">';
+
+						echo '<div class="home-slider-overlay"></div>';
+							echo '<div class="hs-caption">';
+								echo '<div class="caption-content">';
+
+									if( !empty($shop_isle_big_title_title) ) {
+										echo '<div class="hs-title-size-4 font-alt mb-30">'. $shop_isle_big_title_title .'</div>';
 									}
-											echo '<div class="home-slider-overlay"></div>';
-											echo '<div class="hs-caption">';
-												echo '<div class="caption-content">';
-												
-													if( !empty($shop_isle_slide->text) ) {
-														if (function_exists ( 'icl_t' ) && !empty($shop_isle_slide->id)){												
-															$shop_isle_slider_text = icl_t( 'Slide '.$shop_isle_slide->id, 'Slide text', $shop_isle_slide->text );
-															echo '<div class="hs-title-size-4 font-alt mb-30">'. $shop_isle_slider_text .'</div>';			
-														} else {
-															echo '<div class="hs-title-size-4 font-alt mb-30">'. $shop_isle_slide->text .'</div>';							
-														}
-													}
-													
-													if( !empty($shop_isle_slide->subtext) ) {
-														if (function_exists ( 'icl_t' ) && !empty($shop_isle_slide->id)){												
-															$shop_isle_slider_subtext = icl_t( 'Slide '.$shop_isle_slide->id, 'Slide subtext',$shop_isle_slide->subtext );
-															echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_slider_subtext.'</div>';
-														} else {
-															echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_slide->subtext.'</div>';
-														}
-													}
-													
-													if( !empty($shop_isle_slide->link) && !empty($shop_isle_slide->label) ) {
-														if (function_exists ( 'icl_t' ) && !empty($shop_isle_slide->id)){
-															$shop_isle_slider_link = icl_t( 'Slide '.$shop_isle_slide->id, 'Slide button link', $shop_isle_slide->link );
-															$shop_isle_slider_label = icl_t( 'Slide '.$shop_isle_slide->id, 'Slide button label', $shop_isle_slide->label );
-															echo '<a href="'. esc_url( $shop_isle_slider_link ).'" class="section-scroll btn btn-border-w btn-round">'. $shop_isle_slider_label .'</a>';
-														} else {
-															echo '<a href="'. esc_url( $shop_isle_slide->link ).'" class="section-scroll btn btn-border-w btn-round">'.$shop_isle_slide->label.'</a>';
-														}
-													}
-												echo '</div><!-- .caption-content -->';
-											echo '</div><!-- .hs-caption -->';
-										echo '</li><!-- .bg-dark -->';
+
+									if( !empty($shop_isle_big_title_subtitle) ) {
+										echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_big_title_subtitle.'</div>';
+									}
+
+									if( !empty($shop_isle_big_title_button_label) && !empty($shop_isle_big_title_button_link) ) {
+										echo '<a href="'. esc_url( $shop_isle_big_title_button_link ).'" class="section-scroll btn btn-border-w btn-round">'. $shop_isle_big_title_button_label .'</a>';
+									}
+								echo '</div><!-- .caption-content -->';
+							echo '</div><!-- .hs-caption -->';
+
+					echo '</li><!-- .bg-dark -->';
+
+				echo '</ul><!-- .slides -->';
 								
-								}
-									
-							} /* end foreach */
+			echo '</div><!-- .hero-slider -->';
 							
-						echo '</ul><!-- .slides -->';
-								
-					echo '</div><!-- .hero-slider -->';
-							
-				}
-			}
+		}
 			
 		echo '</section >';
 		
