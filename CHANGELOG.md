@@ -1,3 +1,23 @@
+### 1.1.6.1.9 - 20/07/2016
+
+**Changes:**
+
+- Change option to use default WordPress logo functionality
+
+- Replace $wp_customize with is_customize_preview
+
+- Fixed issues with strings not translated and escaped
+
+- Removed support link and updated documentation link
+
+- Disable blog header subtitle by default
+
+- Fixed issues with default content
+
+- Remove the blog template
+
+- Regenerate the pot file
+
 ### 1.1.6.1.8 - 12/07/2016
 
 **Changes:**
