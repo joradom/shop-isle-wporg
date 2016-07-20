@@ -104,8 +104,19 @@
 		}
 
 		if( ( isset($shop_isle_banners_hide) && $shop_isle_banners_hide != 1) || is_customize_preview() ) {
-		
-			$shop_isle_banners = get_theme_mod('shop_isle_banners', json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/banner1.jpg' ,'link' => '#' ),array('image_url' => get_template_directory_uri().'/assets/images/banner2.jpg' ,'link' => '#'), array('image_url' => get_template_directory_uri().'/assets/images/banner3.jpg' ,'link' => '#') )));
+
+			if(current_user_can( 'edit_theme_options')) {
+				$shop_isle_banners = get_theme_mod( 'shop_isle_banners', json_encode( array(
+					array(
+						'image_url' => get_template_directory_uri() . '/assets/images/banner1.jpg',
+						'link'      => '#'
+					),
+					array( 'image_url' => get_template_directory_uri() . '/assets/images/banner2.jpg', 'link' => '#' ),
+					array( 'image_url' => get_template_directory_uri() . '/assets/images/banner3.jpg', 'link' => '#' )
+				) ) );
+			} else {
+				$shop_isle_banners = get_theme_mod( 'shop_isle_banners' );
+			}
 					
 			if( !empty( $shop_isle_banners ) ) {
 						
@@ -179,7 +190,11 @@
 			
 				echo '<div class="container">';
 
-						$shop_isle_products_title = get_theme_mod('shop_isle_products_title',__( 'Latest products', 'shop-isle' ));
+						if(current_user_can( 'edit_theme_options')) {
+							$shop_isle_products_title = get_theme_mod( 'shop_isle_products_title', __( 'Latest products', 'shop-isle' ) );
+						} else {
+							$shop_isle_products_title = get_theme_mod( 'shop_isle_products_title' );
+						}
 						if( !empty($shop_isle_products_title) ) {
 							echo '<div class="row">';
 								echo '<div class="col-sm-6 col-sm-offset-3">';
@@ -398,11 +413,13 @@
 							
 							} else {
 
-								echo '<div class="row">';
-									echo '<div class="col-sm-6 col-sm-offset-3">';
-										echo '<p class="">'.__('No products found.','shop-isle').'</p>';
+								if(current_user_can( 'edit_theme_options')) {
+									echo '<div class="row">';
+										echo '<div class="col-sm-6 col-sm-offset-3">';
+											echo '<p class="">' . __( 'For this section to work, you first need to install the WooCommerce plugin , create some products, and insert a WooCommerce shortocode or select a product category in Customize -> Frontpage sections -> Products section', 'shop-isle' ) . '</p>';
+										echo '</div>';
 									echo '</div>';
-								echo '</div>';
+								}
 								
 							}
 							
@@ -474,10 +491,16 @@
 	if ( ( isset($shop_isle_products_slider_hide) && $shop_isle_products_slider_hide != 1)  || is_customize_preview() ) {
 	
 			echo '<div class="container">';
-			
-				$shop_isle_products_slider_title = get_theme_mod('shop_isle_products_slider_title',__( 'Exclusive products', 'shop-isle' ));
-				$shop_isle_products_slider_subtitle = get_theme_mod('shop_isle_products_slider_subtitle',__( 'Special category of products', 'shop-isle' ));
-			
+
+				if(current_user_can( 'edit_theme_options')) {
+					$shop_isle_products_slider_title = get_theme_mod( 'shop_isle_products_slider_title', __( 'Exclusive products', 'shop-isle' ) );
+					$shop_isle_products_slider_subtitle = get_theme_mod( 'shop_isle_products_slider_subtitle',__( 'For this section to work, you first need to install the WooCommerce plugin , create some products, and select a product category in Customize -> Frontpage sections -> Products slider section', 'shop-isle' ) );
+				}
+				else {
+					$shop_isle_products_slider_title = get_theme_mod( 'shop_isle_products_slider_title' );
+					$shop_isle_products_slider_subtitle = get_theme_mod( 'shop_isle_products_slider_subtitle' );
+				}
+
 				if( !empty($shop_isle_products_slider_title) || !empty($shop_isle_products_slider_subtitle) ) {
 					echo '<div class="row">';
 						echo '<div class="col-sm-6 col-sm-offset-3">';
