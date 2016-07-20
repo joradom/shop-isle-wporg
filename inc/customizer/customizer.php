@@ -211,10 +211,15 @@ function shop_isle_customize_register( $wp_customize ) {
 	/*********************************/
     /*******  Products section *******/
 	/********************************/
-	
+
+	$shop_isle_require_woo = '';
+	if( !class_exists( 'WooCommerce' ) ) {
+		$shop_isle_require_woo = '<div class="shop-isle-require-woo"><p>'.__( 'To use this section, you are required to first install the WooCommerce plugin.', 'shop-isle' ).'</p></div>';
+	}
+
 	$wp_customize->add_section( 'shop_isle_products_section' , array(
 		'title'       => __( 'Products section', 'shop-isle' ),
-		'description' => __( 'If no shortcode or no category is selected , WooCommerce latest products are displaying.', 'shop-isle' ),
+		'description' => $shop_isle_require_woo,
 		'priority'    => 43,
 		'panel' => 'shop_isle_front_page_sections'
 	));
@@ -280,7 +285,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'shop_isle_products_category', array(
 		'type' 		   => 'select',
 		'label' 	   => __( 'Products category', 'shop-isle' ),
-		'description'  => __( 'OR pick a product category', 'shop-isle' ),
+		'description'  => __( 'OR pick a product category. If no shortcode or no category is selected , WooCommerce latest products are displaying.', 'shop-isle' ),
 		'section' 	   => 'shop_isle_products_section',
 		'choices'      => $shop_isle_prod_categories_array,
 		'priority' 	   => 4,
@@ -336,10 +341,10 @@ function shop_isle_customize_register( $wp_customize ) {
 	/****************************************/
     /*******  Products slider section *******/
 	/****************************************/
-	
+
 	$wp_customize->add_section( 'shop_isle_products_slider_section' , array(
 		'title'       => __( 'Products slider section', 'shop-isle' ),
-		'description' => __( 'If no category is selected , WooCommerce products from the first category found are displaying.', 'shop-isle' ),
+		'description' => $shop_isle_require_woo,
 		'priority'    => 45,
 		'panel' => 'shop_isle_front_page_sections'
 	));
@@ -418,6 +423,7 @@ function shop_isle_customize_register( $wp_customize ) {
 			'section' 	   => 'shop_isle_products_slider_section',
 			'choices'      => $shop_isle_prod_categories_array,
 			'priority' 	   => 5,
+			'description' => __( 'If no category is selected , WooCommerce products from the first category found are displaying.', 'shop-isle' )
 		)
 	);
 	
