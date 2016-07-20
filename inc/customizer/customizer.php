@@ -467,8 +467,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	/* socials */
 	$wp_customize->add_setting( 'shop_isle_socials', array(
 		'transport' => 'postMessage',
-		'sanitize_callback' => 'shop_isle_sanitize_repeater',
-		'default' => json_encode(array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'social_twitter' ,'link' => '#'), array('icon_value' => 'social_dribbble' ,'link' => '#'), array('icon_value' => 'social_skype' ,'link' => '#') )),
+		'sanitize_callback' => 'shop_isle_sanitize_repeater'
 	));
 	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_socials', array(
 		'label'   => __('Add new social','shop-isle'),

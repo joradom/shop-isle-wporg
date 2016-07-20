@@ -319,9 +319,7 @@ function shop_isle_add_id() {
 		}
 		
 		/* Footer socials */
-		$shop_isle_socials = get_theme_mod('shop_isle_socials', json_encode(
-							array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'social_twitter' ,'link' => '#'), array('icon_value' => 'social_dribbble' ,'link' => '#'), array('icon_value' => 'social_skype' ,'link' => '#') )
-		));
+		$shop_isle_socials = get_theme_mod('shop_isle_socials');
 		
 		if(!empty($shop_isle_socials)){
 			
