@@ -438,8 +438,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Copyright */
 	$wp_customize->add_setting( 'shop_isle_copyright', array(
-		'sanitize_callback' => 'shop_isle_sanitize_text', 
-		'default' => __( '&copy; Themeisle, All rights reserved', 'shop-isle'),
+		'sanitize_callback' => 'shop_isle_sanitize_text',
 		'transport' => 'postMessage'
 	));
 
@@ -451,7 +450,6 @@ function shop_isle_customize_register( $wp_customize ) {
 
 	/* Hide site info */
 	$wp_customize->add_setting( 'shop_isle_site_info_hide', array(
-		'transport' => 'postMessage',
 		'sanitize_callback' => 'shop_isle_sanitize_text'
 	));
 
