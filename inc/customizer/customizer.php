@@ -41,12 +41,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Logo */
 	$custom_logo = $wp_customize->get_control( 'custom_logo' );
-	if( ! empty( $custom_logo ) ) {
-
-		$wp_customize->get_control( 'custom_logo' )->section = 'shop_isle_header_section' ;
-		$wp_customize->get_control( 'custom_logo' )->priority = 1;
-
-	} else {
+	if( empty( $custom_logo ) ) {
 
 		$wp_customize->add_setting( 'shop_isle_logo', array(
 			'transport'         => 'postMessage',
