@@ -119,7 +119,8 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Hide big title section */
 	$wp_customize->add_setting( 'shop_isle_big_title_hide', array(
-		'sanitize_callback' => 'shop_isle_sanitize_text'
+		'sanitize_callback' => 'shop_isle_sanitize_text',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(

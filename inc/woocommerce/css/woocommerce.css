@@ -2277,9 +2277,6 @@ h1.page-title {
 	padding-left: 0;
 	padding-right: 0;
 }
-.shop_isle_hidden_if_not_customizer {
-	display: none !important;
-}
 body.home .navbar-color-customizer {
 	background-color: rgba(10, 10, 10, .9) !important;
 }

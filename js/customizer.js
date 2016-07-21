@@ -18,6 +18,22 @@
 		} );
 	} );
 
+	/****************************************/
+	/********** Big title section ***********/
+	/****************************************/
+	wp.customize( 'shop_isle_big_title_hide', function( value ) {
+		value.bind( function( to ) {
+
+			if( to != '1' ) {
+				$( '.home-section' ).removeClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+			else {
+				$( '.home-section' ).addClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+			
+		} );
+	} );
+
 	/******************************/
 	/**********  Colors ***********/
 	/******************************/
