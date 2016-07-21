@@ -18,6 +18,22 @@
 		} );
 	} );
 
+	/****************************************/
+	/********** Big title section ***********/
+	/****************************************/
+	wp.customize( 'shop_isle_big_title_hide', function( value ) {
+		value.bind( function( to ) {
+
+			if( to != '1' ) {
+				$( '.home-section' ).removeClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+			else {
+				$( '.home-section' ).addClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+			
+		} );
+	} );
+
 	/******************************/
 	/**********  Colors ***********/
 	/******************************/
@@ -90,23 +106,6 @@
 		} );
 	} );
 	
-	/*******************************/
-	/******    Slider section ******/
-	/*******************************/
-	wp.customize( 'shop_isle_slider_hide', function( value ) {
-		value.bind( function( to ) {
-			if( to != '1' ) {
-				$( 'section.home-section' ).removeClass( 'shop_isle_hidden_if_not_customizer' );
-				$( '.navbar-custom' ).removeClass( 'navbar-color-customizer' );
-				$('.main').css('margin-top', 0 );
-			}
-			else {
-				$( 'section.home-section' ).addClass( 'shop_isle_hidden_if_not_customizer' );
-				$( '.navbar-custom' ).addClass( 'navbar-color-customizer' );
-				$('.main').css('margin-top', $('.navbar-custom').outerHeight() );
-			}
-		} );
-	} );
 
 	/********************************/
     /*********	Banners section *****/

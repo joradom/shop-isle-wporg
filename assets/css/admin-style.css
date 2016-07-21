@@ -108,3 +108,10 @@ button.shop_isle_general_control_remove_field:hover{
 	letter-spacing: 1px;
 	text-transform: uppercase;
 }
+.shop-isle-require-woo {
+	background-color: #f0ad4e;
+	padding:10px;
+}
+.shop_isle_hidden_if_not_customizer {
+	display: none !important;
+}

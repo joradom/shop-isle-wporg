@@ -267,20 +267,17 @@ function shop_isle_cart_item_thumbnail( $thumb, $cart_item, $cart_item_key ) {
  */
 function shop_isle_products_slider_on_single_page() {
 
-	global $wp_customize;
-	
-
 	$shop_isle_products_slider_single_hide = get_theme_mod('shop_isle_products_slider_single_hide');
 
 	if( isset($shop_isle_products_slider_single_hide) && $shop_isle_products_slider_single_hide != 1 ):
 		echo '<hr class="divider-w">';
 		echo '<section class="module module-small-bottom aya">';
-	elseif ( isset( $wp_customize ) ):
+	elseif ( is_customize_preview() ):
 		echo '<hr class="divider-w">';
 		echo '<section class="module module-small-bottom shop_isle_hidden_if_not_customizer">';
 	endif;
 
-	if( ( isset($shop_isle_products_slider_single_hide) && $shop_isle_products_slider_single_hide != 1 ) || isset( $wp_customize ) ):
+	if( ( isset($shop_isle_products_slider_single_hide) && $shop_isle_products_slider_single_hide != 1 ) || is_customize_preview() ):
 
 			echo '<div class="container">';
 

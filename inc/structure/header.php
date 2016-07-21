@@ -13,8 +13,6 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 	 */
 	function shop_isle_primary_navigation() {
 
-		global $wp_customize;
-
 		?>
 		<!-- Navigation start -->
 		<nav class="navbar navbar-custom navbar-transparent navbar-fixed-top" role="navigation">
@@ -23,29 +21,43 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 				<div class="header-container">
 
 					<div class="navbar-header">
-						<?php
 
-							$shop_isle_logo = get_theme_mod('shop_isle_logo');
-							echo '<div class="shop_isle_header_title"><div class="shop-isle-header-title-inner">';
-							if( !empty($shop_isle_logo) ):
-								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="logo-image"><img src="'.esc_url($shop_isle_logo).'"></a>';
-								if( isset( $wp_customize ) ):
-									echo '<h1 class="site-title shop_isle_hidden_if_not_customizer""><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
-									echo '<h2 class="site-description shop_isle_hidden_if_not_customizer"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
-								endif;
-							else:
-								if( isset( $wp_customize ) ):
-									echo '
-											<a href="'.esc_url( home_url( '/' ) ).'" class="logo-image shop_isle_hidden_if_not_customizer">
-												<img src="">
-											</a>
-										';
-								endif;							
-								echo '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
-								echo '<h2 class="site-description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
-							endif;
-							echo '</div></div>';
-						?>
+						<div class="shop_isle_header_title">
+
+							<div class="shop-isle-header-title-inner">
+
+							<?php
+
+							/* Logo */
+							if ( function_exists( 'the_custom_logo' ) ) {
+								the_custom_logo();
+							} else {
+								$shop_isle_logo = get_theme_mod( 'shop_isle_logo' );
+
+								if( !empty( $shop_isle_logo ) ) {
+									echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="custom-logo">';
+										echo '<img src="' . esc_url($shop_isle_logo) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
+									echo '</a>';
+								}
+							}
+
+							/* Title */
+							?>
+							<div class="header-title-wrap">
+								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_attr(get_bloginfo( 'name' )); ?></a></h1>
+							</div>
+
+							<?php
+							/* Tagline */
+							$description = get_bloginfo( 'description', 'display' );
+							if ( !empty( $description ) ) {
+								echo '<h2 class="site-description"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . esc_attr( $description ) . '</h2>';
+							}
+							?>
+
+							</div><!-- .shop-isle-header-title-inner -->
+
+						</div><!-- .shop_isle_header_title -->
 
 						<div type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
 							<span class="sr-only"><?php _e('Toggle navigation','shop-isle'); ?></span>

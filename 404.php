@@ -14,7 +14,7 @@ get_header(); ?>
 		$shop_isle_404_background = get_theme_mod('shop_isle_404_background', get_template_directory_uri().'/assets/images/404.jpg');
 		
 		if( !empty($shop_isle_404_background) ):
-			echo '<section class="home-section home-parallax home-fade home-full-height bg-dark error-page-background" data-background="'.$shop_isle_404_background.'">';
+			echo '<section class="home-section home-parallax home-fade home-full-height bg-dark error-page-background" data-background="'.esc_url($shop_isle_404_background).'">';
 		else:	
 			echo '<section class="home-section home-parallax home-fade home-full-height bg-dark error-page-background">';
 		endif;
@@ -31,7 +31,7 @@ get_header(); ?>
 						endif;
 				
 						/* text */
-						$shop_isle_404_text = get_theme_mod('shop_isle_404_text','The requested URL was not found on this server.<br> That is all we know.');
+						$shop_isle_404_text = get_theme_mod('shop_isle_404_text',__( 'The requested URL was not found on this server.<br> That is all we know.','shop-isle' ));
 						if( !empty($shop_isle_404_text) ):
 							echo '<div class="font-alt error-page-text">';
 								echo shop_isle_sanitize_text($shop_isle_404_text);
