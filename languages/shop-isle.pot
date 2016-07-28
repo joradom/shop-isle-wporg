@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Shop Isle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-20 18:32+0200\n"
-"PO-Revision-Date: 2016-07-20 18:32+0200\n"
+"POT-Creation-Date: 2016-07-28 11:52+0200\n"
+"PO-Revision-Date: 2016-07-28 11:53+0200\n"
 "Last-Translator: \n"
-"Language-Team: Themeisle <friends@themeisle.com>\n"
+"Language-Team: ThemeIsle <friends@themeisle.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: inc\n"
@@ -25,6 +25,12 @@ msgstr ""
 
 #: 404.php:43
 msgid "Back to home page"
+msgstr ""
+
+#: archive.php:94
+#: home.php:112
+#: index.php:99
+msgid "Read more"
 msgstr ""
 
 #: archive.php:106
@@ -378,32 +384,28 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
-#: index.php:99
-msgid "Read more"
-msgstr ""
-
 #: search.php:24
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
 #: template-frontpage.php:27
-#: inc/customizer/customizer.php:168
+#: inc/customizer/customizer.php:164
 msgid "WooCommerce Theme"
 msgstr ""
 
 #: template-frontpage.php:28
-#: inc/customizer/customizer.php:180
+#: inc/customizer/customizer.php:176
 msgid "Find out more"
 msgstr ""
 
 #: template-frontpage.php:29
-#: inc/customizer/customizer.php:192
+#: inc/customizer/customizer.php:188
 msgid "#"
 msgstr ""
 
 #: template-frontpage.php:194
-#: inc/customizer/customizer.php:284
+#: inc/customizer/customizer.php:280
 msgid "Latest products"
 msgstr ""
 
@@ -426,7 +428,7 @@ msgid "For this section to work, you first need to install the WooCommerce plugi
 msgstr ""
 
 #: template-frontpage.php:496
-#: inc/customizer/customizer.php:429
+#: inc/customizer/customizer.php:425
 msgid "Exclusive products"
 msgstr ""
 
@@ -463,48 +465,48 @@ msgstr ""
 msgid "Header"
 msgstr ""
 
-#: inc/customizer/customizer.php:56
+#: inc/customizer/customizer.php:51
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer/customizer.php:73
+#: inc/customizer/customizer.php:68
 msgid "Blog header title"
 msgstr ""
 
-#: inc/customizer/customizer.php:84
+#: inc/customizer/customizer.php:79
 msgid "Blog header subtitle"
 msgstr ""
 
-#: inc/customizer/customizer.php:94
+#: inc/customizer/customizer.php:89
 msgid "Frontpage settings"
 msgstr ""
 
-#: inc/customizer/customizer.php:111
+#: inc/customizer/customizer.php:106
 msgid "Frontpage sections"
 msgstr ""
 
-#: inc/customizer/customizer.php:120
+#: inc/customizer/customizer.php:115
 msgid "Big title section"
 msgstr ""
 
-#: inc/customizer/customizer.php:134
+#: inc/customizer/customizer.php:130
 msgid "Hide big title section?"
 msgstr ""
 
-#: inc/customizer/customizer.php:135
+#: inc/customizer/customizer.php:131
 msgid "If you check this box, the Big title section will disappear from homepage."
 msgstr ""
 
-#: inc/customizer/customizer.php:148
+#: inc/customizer/customizer.php:144
 #: inc/customizer/functions.php:198
 #: inc/customizer/functions.php:262
 #: inc/customizer/functions.php:327
 msgid "Image"
 msgstr ""
 
-#: inc/customizer/customizer.php:160
-#: inc/customizer/customizer.php:364
-#: inc/customizer/customizer.php:609
+#: inc/customizer/customizer.php:156
+#: inc/customizer/customizer.php:360
+#: inc/customizer/customizer.php:605
 #: inc/customizer/functions.php:207
 #: inc/customizer/functions.php:208
 #: inc/customizer/functions.php:270
@@ -514,7 +516,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: inc/customizer/customizer.php:172
+#: inc/customizer/customizer.php:168
 #: inc/customizer/functions.php:213
 #: inc/customizer/functions.php:214
 #: inc/customizer/functions.php:275
@@ -524,194 +526,194 @@ msgstr ""
 msgid "Subtitle"
 msgstr ""
 
-#: inc/customizer/customizer.php:184
-#: inc/customizer/customizer.php:649
+#: inc/customizer/customizer.php:180
+#: inc/customizer/customizer.php:645
 msgid "Button label"
 msgstr ""
 
-#: inc/customizer/customizer.php:196
-#: inc/customizer/customizer.php:636
+#: inc/customizer/customizer.php:192
+#: inc/customizer/customizer.php:632
 msgid "Button link"
 msgstr ""
 
-#: inc/customizer/customizer.php:206
+#: inc/customizer/customizer.php:202
 msgid "Banners section"
 msgstr ""
 
-#: inc/customizer/customizer.php:221
+#: inc/customizer/customizer.php:217
 msgid "Hide banners section?"
 msgstr ""
 
-#: inc/customizer/customizer.php:222
+#: inc/customizer/customizer.php:218
 msgid "If you check this box, the Banners section will disappear from homepage."
 msgstr ""
 
-#: inc/customizer/customizer.php:235
-#: inc/customizer/customizer.php:246
+#: inc/customizer/customizer.php:231
+#: inc/customizer/customizer.php:242
 msgid "Add new banner"
 msgstr ""
 
-#: inc/customizer/customizer.php:245
+#: inc/customizer/customizer.php:241
 msgid "Banner"
 msgstr ""
 
-#: inc/customizer/customizer.php:256
+#: inc/customizer/customizer.php:252
 msgid "To use this section, you are required to first install the WooCommerce plugin."
 msgstr ""
 
-#: inc/customizer/customizer.php:260
+#: inc/customizer/customizer.php:256
 msgid "Products section"
 msgstr ""
 
-#: inc/customizer/customizer.php:274
+#: inc/customizer/customizer.php:270
 msgid "Hide products section?"
 msgstr ""
 
-#: inc/customizer/customizer.php:275
+#: inc/customizer/customizer.php:271
 msgid "If you check this box, the Products section will disappear from homepage."
 msgstr ""
 
-#: inc/customizer/customizer.php:288
-#: inc/customizer/customizer.php:434
+#: inc/customizer/customizer.php:284
+#: inc/customizer/customizer.php:430
 msgid "Section title"
 msgstr ""
 
-#: inc/customizer/customizer.php:299
+#: inc/customizer/customizer.php:295
 msgid "WooCommerce shortcode"
 msgstr ""
 
-#: inc/customizer/customizer.php:301
+#: inc/customizer/customizer.php:297
 msgid "Insert a WooCommerce shortcode"
 msgstr ""
 
-#: inc/customizer/customizer.php:305
+#: inc/customizer/customizer.php:301
 msgid "Select category"
 msgstr ""
 
-#: inc/customizer/customizer.php:326
-#: inc/customizer/customizer.php:461
+#: inc/customizer/customizer.php:322
+#: inc/customizer/customizer.php:457
 msgid "Products category"
 msgstr ""
 
-#: inc/customizer/customizer.php:327
+#: inc/customizer/customizer.php:323
 msgid "OR pick a product category. If no shortcode or no category is selected , WooCommerce latest products are displaying."
 msgstr ""
 
-#: inc/customizer/customizer.php:338
+#: inc/customizer/customizer.php:334
 msgid "Video section"
 msgstr ""
 
-#: inc/customizer/customizer.php:351
+#: inc/customizer/customizer.php:347
 msgid "Hide video section?"
 msgstr ""
 
-#: inc/customizer/customizer.php:352
+#: inc/customizer/customizer.php:348
 msgid "If you check this box, the Video section will disappear from homepage."
 msgstr ""
 
-#: inc/customizer/customizer.php:375
+#: inc/customizer/customizer.php:371
 msgid "Youtube link"
 msgstr ""
 
-#: inc/customizer/customizer.php:385
+#: inc/customizer/customizer.php:381
 msgid "Products slider section"
 msgstr ""
 
-#: inc/customizer/customizer.php:401
+#: inc/customizer/customizer.php:397
 msgid "Hide products slider section on frontpage?"
 msgstr ""
 
-#: inc/customizer/customizer.php:402
+#: inc/customizer/customizer.php:398
 msgid "If you check this box, the Products slider section will disappear from homepage."
 msgstr ""
 
-#: inc/customizer/customizer.php:418
+#: inc/customizer/customizer.php:414
 msgid "Hide products slider section on single product page?"
 msgstr ""
 
-#: inc/customizer/customizer.php:419
+#: inc/customizer/customizer.php:415
 msgid "If you check this box, the Products slider section will disappear from each single product page."
 msgstr ""
 
-#: inc/customizer/customizer.php:443
+#: inc/customizer/customizer.php:439
 msgid "Special category of products"
 msgstr ""
 
-#: inc/customizer/customizer.php:447
+#: inc/customizer/customizer.php:443
 msgid "Section subtitle"
 msgstr ""
 
-#: inc/customizer/customizer.php:465
+#: inc/customizer/customizer.php:461
 msgid "If no category is selected , WooCommerce products from the first category found are displaying."
 msgstr ""
 
-#: inc/customizer/customizer.php:474
+#: inc/customizer/customizer.php:470
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/customizer.php:485
+#: inc/customizer/customizer.php:481
 msgid "Copyright"
 msgstr ""
 
-#: inc/customizer/customizer.php:499
+#: inc/customizer/customizer.php:495
 msgid "Hide site info?"
 msgstr ""
 
-#: inc/customizer/customizer.php:500
+#: inc/customizer/customizer.php:496
 msgid "If you check this box, the Site info will disappear from footer."
 msgstr ""
 
-#: inc/customizer/customizer.php:512
-#: inc/customizer/customizer.php:523
+#: inc/customizer/customizer.php:508
+#: inc/customizer/customizer.php:519
 msgid "Add new social"
 msgstr ""
 
-#: inc/customizer/customizer.php:522
+#: inc/customizer/customizer.php:518
 msgid "Social"
 msgstr ""
 
-#: inc/customizer/customizer.php:531
-#: inc/customizer/customizer.php:566
+#: inc/customizer/customizer.php:527
+#: inc/customizer/customizer.php:562
 msgid "Contact page"
 msgstr ""
 
-#: inc/customizer/customizer.php:541
+#: inc/customizer/customizer.php:537
 msgid "Contact form shortcode"
 msgstr ""
 
-#: inc/customizer/customizer.php:542
+#: inc/customizer/customizer.php:538
 msgid "Create a form, copy the shortcode generated and paste it here. We recommend <a href=\"https://wordpress.org/plugins/contact-form-7/\">Contact Form 7</a> but you can use any plugin you like."
 msgstr ""
 
-#: inc/customizer/customizer.php:554
+#: inc/customizer/customizer.php:550
 msgid "Map shortcode"
 msgstr ""
 
-#: inc/customizer/customizer.php:555
+#: inc/customizer/customizer.php:551
 msgid "To use this section please install <a href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated"
 msgstr ""
 
-#: inc/customizer/customizer.php:584
+#: inc/customizer/customizer.php:580
 msgid "404 Not found page"
 msgstr ""
 
-#: inc/customizer/customizer.php:596
+#: inc/customizer/customizer.php:592
 msgid "Background image"
 msgstr ""
 
-#: inc/customizer/customizer.php:623
+#: inc/customizer/customizer.php:619
 msgid "Text"
 msgstr ""
 
-#: inc/customizer/customizer.php:659
+#: inc/customizer/customizer.php:655
 msgid "Advanced options"
 msgstr ""
 
-#: inc/customizer/customizer.php:698
+#: inc/customizer/customizer.php:694
 msgid "Disable preloader?"
 msgstr ""
 
-#: inc/customizer/customizer.php:699
+#: inc/customizer/customizer.php:695
 msgid "If this box is checked, the preloader will be disabled from homepage."
 msgstr ""
 
@@ -838,8 +840,17 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: inc/structure/footer.php:91
-msgid "powered by"
+#: inc/structure/footer.php:95
+#, php-format
+msgid "%1$s powered by %2$s"
+msgstr ""
+
+#: inc/structure/footer.php:95
+msgid "Shop Isle"
+msgstr ""
+
+#: inc/structure/footer.php:95
+msgid "WordPress"
 msgstr ""
 
 #: inc/structure/header.php:63
