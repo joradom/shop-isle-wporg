@@ -249,7 +249,7 @@ function shop_isle_customize_register( $wp_customize ) {
 
 	$shop_isle_require_woo = '';
 	if( !class_exists( 'WooCommerce' ) ) {
-		$shop_isle_require_woo = '<div class="shop-isle-require-woo"><p>'.__( 'To use this section, you are required to first install the WooCommerce plugin.', 'shop-isle' ).'</p></div>';
+		$shop_isle_require_woo = '<div class="shop-isle-require-woo"><p>'.sprintf( __( 'To use this section, you are required to first install the  %1$s plugin', 'shop-isle' ), sprintf( '<a href="'.esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=woocommerce' ), 'install-plugin_woocommerce' ) ).'">%s</a>', esc_html__( 'WooCommerce', 'shop-isle' ) ) ).'</p></div>';
 	}
 
 	$wp_customize->add_section( 'shop_isle_products_section' , array(

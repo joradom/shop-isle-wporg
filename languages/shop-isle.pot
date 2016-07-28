@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Shop Isle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-28 11:52+0200\n"
-"PO-Revision-Date: 2016-07-28 11:53+0200\n"
+"POT-Creation-Date: 2016-07-28 13:11+0200\n"
+"PO-Revision-Date: 2016-07-28 13:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeIsle <friends@themeisle.com>\n"
 "MIME-Version: 1.0\n"
@@ -558,7 +558,12 @@ msgid "Banner"
 msgstr ""
 
 #: inc/customizer/customizer.php:252
-msgid "To use this section, you are required to first install the WooCommerce plugin."
+#, php-format
+msgid "To use this section, you are required to first install the  %1$s plugin"
+msgstr ""
+
+#: inc/customizer/customizer.php:252
+msgid "WooCommerce"
 msgstr ""
 
 #: inc/customizer/customizer.php:256
