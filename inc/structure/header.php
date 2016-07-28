@@ -51,7 +51,7 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 							/* Tagline */
 							$description = get_bloginfo( 'description', 'display' );
 							if ( !empty( $description ) ) {
-								echo '<h2 class="site-description"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . esc_attr( $description ) . '</h2>';
+								echo '<h2 class="site-description"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . esc_attr( $description ) . '</a></h2>';
 							}
 							?>
 
@@ -77,7 +77,7 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 
 					<?php if( class_exists( 'WooCommerce' ) ): ?>
 						<div class="navbar-cart">
-							
+
 							<div class="header-search">
 								<div class="glyphicon glyphicon-search header-search-button"></div>
 								<div class="header-search-input">
