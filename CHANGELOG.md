@@ -1,3 +1,17 @@
+### 1.1.6.3 - 28/07/2016
+
+**Changes:**
+
+- Update theme name
+
+- Fixed default menu layout
+
+- Fixed space missing in the footer
+
+- New updated documentation link
+
+- New screenshot
+
 ### 1.1.6.1.9 - 20/07/2016
 
 **Changes:**
