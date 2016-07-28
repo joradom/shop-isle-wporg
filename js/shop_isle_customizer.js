@@ -213,7 +213,7 @@ jQuery(document).ready(function(){
 
 	jQuery( '#customize-theme-controls > ul' ).prepend('<li class="accordion-section shop-isle-upsells">');
 
-	jQuery( '.shop-isle-upsells' ).append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://docs.themeisle.com/article/184-shopisle-documentation" class="button" target="_blank">{documentation}</a>'.replace('{documentation}',objectL10n.documentation));
+	jQuery( '.shop-isle-upsells' ).append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://docs.themeisle.com/article/421-shop-isle-documentation-wordpress-org" class="button" target="_blank">{documentation}</a>'.replace('{documentation}',objectL10n.documentation));
 
 
 	jQuery('body').on('click', '.shop_isle_go_to_section', function (event) {
