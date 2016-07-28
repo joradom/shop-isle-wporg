@@ -82,10 +82,8 @@ add_action( 'shop_isle_page_after', 	'shop_isle_display_comments',	10 );
 /**
  * Extras
  * @see  shop_isle_body_classes()
- * @see  shop_isle_page_menu_args()
  */
 add_filter( 'body_class',			'shop_isle_body_classes' );
-add_filter( 'wp_page_menu_args',	'shop_isle_page_menu_args' );
 
 /**
  * Customize
