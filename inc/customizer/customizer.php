@@ -20,7 +20,19 @@ function shop_isle_customize_register( $wp_customize ) {
 	}
 	class ShopIsle_Front_Page_Instructions extends WP_Customize_Control {
 		public function render_content() {
-			echo __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Static Front Page and under "Static Front Page" select "A static page". Finally, for "Front page" choose the page you previously created.','shop-isle' ).'<br><br>'.__( 'Need further informations? Check this','shop-isle' ).' <a href="http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one">'.__( 'doc','shop-isle').'</a>';
+
+			printf(
+				__( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to %1$s and under "Front page displays" select "A static page". Finally, for "Front page" choose the page you previously created.', 'shop-isle' ),
+				sprintf( '<a class="shop_isle_go_to_section" href="accordion-section-shop_isle_general_section">%s</a>', esc_html__( 'Advanced options', 'shop-isle' ) )
+			);
+
+			echo '<br><br>';
+
+			printf(
+				__( 'Need further informations? Check this %1$s', 'shop-isle' ),
+				sprintf( '<a href="http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one" target="_blank">%s</a>', esc_html__( 'doc', 'shop-isle' ) )
+			);
+
 		}
 	}
 

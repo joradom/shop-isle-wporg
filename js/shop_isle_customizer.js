@@ -215,4 +215,12 @@ jQuery(document).ready(function(){
 
 	jQuery( '.shop-isle-upsells' ).append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://docs.themeisle.com/article/184-shopisle-documentation" class="button" target="_blank">{documentation}</a>'.replace('{documentation}',objectL10n.documentation));
 
+
+	jQuery('body').on('click', '.shop_isle_go_to_section', function (event) {
+		var id = jQuery(this).attr('href');
+		if( typeof(id) != 'undefined' ) {
+			jQuery("#" + id).find('h3').trigger('click');
+		}
+		event.preventDefault();
+	});
 });
