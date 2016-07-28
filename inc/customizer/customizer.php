@@ -535,7 +535,10 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control( 'shop_isle_contact_page_form_shortcode', array(
 		'label'    => __( 'Contact form shortcode', 'shop-isle' ),
-		'description' => __('Create a form, copy the shortcode generated and paste it here. We recommend <a href="https://wordpress.org/plugins/contact-form-7/">Contact Form 7</a> but you can use any plugin you like.','shop-isle'),
+		'description' => sprintf(
+							__( 'Create a form, copy the shortcode generated and paste it here. We recommend %1$s but you can use any plugin you like.', 'shop-isle' ),
+							sprintf( '<a href="'.esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=contact-form-7' ), 'install-plugin_contact-form-7' ) ).'">%s</a>', esc_html__( 'Contact Form 7', 'shop-isle' ) )
+						),
 		'section'  => 'shop_isle_contact_page_section',
 		'active_callback' => 'shop_isle_is_contact_page',
 		'priority'    => 1
@@ -548,7 +551,10 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control( 'shop_isle_contact_page_map_shortcode', array(
 		'label'    => __( 'Map shortcode', 'shop-isle' ),
-		'description' => __('To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','shop-isle'),
+		'description' => sprintf(
+							__( 'To use this section please install %1$s plugin then use it to create a map and paste here the shortcode generated', 'shop-isle' ),
+							sprintf( '<a href="'.esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=intergeo-maps' ), 'install-plugin_intergeo-maps' ) ).'">%s</a>', esc_html__( 'Intergeo Maps', 'shop-isle' ) )
+						),
 		'section'  => 'shop_isle_contact_page_section',
 		'active_callback' => 'shop_isle_is_contact_page',
 		'priority'    => 2

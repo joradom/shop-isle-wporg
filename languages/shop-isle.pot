@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Shop Isle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-28 13:11+0200\n"
-"PO-Revision-Date: 2016-07-28 13:11+0200\n"
+"POT-Creation-Date: 2016-07-28 13:42+0200\n"
+"PO-Revision-Date: 2016-07-28 13:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeIsle <friends@themeisle.com>\n"
 "MIME-Version: 1.0\n"
@@ -506,7 +506,7 @@ msgstr ""
 
 #: inc/customizer/customizer.php:156
 #: inc/customizer/customizer.php:360
-#: inc/customizer/customizer.php:605
+#: inc/customizer/customizer.php:611
 #: inc/customizer/functions.php:207
 #: inc/customizer/functions.php:208
 #: inc/customizer/functions.php:270
@@ -527,12 +527,12 @@ msgid "Subtitle"
 msgstr ""
 
 #: inc/customizer/customizer.php:180
-#: inc/customizer/customizer.php:645
+#: inc/customizer/customizer.php:651
 msgid "Button label"
 msgstr ""
 
 #: inc/customizer/customizer.php:192
-#: inc/customizer/customizer.php:632
+#: inc/customizer/customizer.php:638
 msgid "Button link"
 msgstr ""
 
@@ -678,7 +678,7 @@ msgid "Social"
 msgstr ""
 
 #: inc/customizer/customizer.php:527
-#: inc/customizer/customizer.php:562
+#: inc/customizer/customizer.php:568
 msgid "Contact page"
 msgstr ""
 
@@ -686,39 +686,49 @@ msgstr ""
 msgid "Contact form shortcode"
 msgstr ""
 
-#: inc/customizer/customizer.php:538
-msgid "Create a form, copy the shortcode generated and paste it here. We recommend <a href=\"https://wordpress.org/plugins/contact-form-7/\">Contact Form 7</a> but you can use any plugin you like."
+#: inc/customizer/customizer.php:539
+#, php-format
+msgid "Create a form, copy the shortcode generated and paste it here. We recommend %1$s but you can use any plugin you like."
 msgstr ""
 
-#: inc/customizer/customizer.php:550
+#: inc/customizer/customizer.php:540
+msgid "Contact Form 7"
+msgstr ""
+
+#: inc/customizer/customizer.php:553
 msgid "Map shortcode"
 msgstr ""
 
-#: inc/customizer/customizer.php:551
-msgid "To use this section please install <a href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated"
+#: inc/customizer/customizer.php:555
+#, php-format
+msgid "To use this section please install %1$s plugin then use it to create a map and paste here the shortcode generated"
 msgstr ""
 
-#: inc/customizer/customizer.php:580
+#: inc/customizer/customizer.php:556
+msgid "Intergeo Maps"
+msgstr ""
+
+#: inc/customizer/customizer.php:586
 msgid "404 Not found page"
 msgstr ""
 
-#: inc/customizer/customizer.php:592
+#: inc/customizer/customizer.php:598
 msgid "Background image"
 msgstr ""
 
-#: inc/customizer/customizer.php:619
+#: inc/customizer/customizer.php:625
 msgid "Text"
 msgstr ""
 
-#: inc/customizer/customizer.php:655
+#: inc/customizer/customizer.php:661
 msgid "Advanced options"
 msgstr ""
 
-#: inc/customizer/customizer.php:694
+#: inc/customizer/customizer.php:700
 msgid "Disable preloader?"
 msgstr ""
 
-#: inc/customizer/customizer.php:695
+#: inc/customizer/customizer.php:701
 msgid "If this box is checked, the preloader will be disabled from homepage."
 msgstr ""
 
