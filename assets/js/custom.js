@@ -406,6 +406,28 @@
 		styleElement.appendChild(document.createTextNode(newStyle));
 	}
 
+	/* WR MegaMenu */
+	var $megaMen = $( '.wr-megamenu-container' );
+	if( $megaMen.length > 0 ) {
+		$( '.navbar-custom' ).addClass( 'wr-megamenu-container-wrap' );
+		$megaMen.addClass("bg-tr");
+		shopIsleNewStyleForWpMegaMenu( '.wr-megamenu-container.bg-tr,' +
+			'.wr-megamenu-container.bg-tr .wr-mega-menu > li:hover > a, ' +
+			'.wr-megamenu-container.bg-tr .wr-mega-menu > li.focus > a' +
+			' { background: transparent !important }'
+		);
+	}
+	function shopIsleNewStyleForWpMegaMenu( newStyle ) {
+		var styleElement = document.getElementById('shop_isle_styles_js');
+		if (!styleElement) {
+			styleElement = document.createElement('style');
+			styleElement.type = 'text/css';
+			styleElement.id = 'shop_isle_styles_js';
+			document.getElementsByTagName('footer')[0].appendChild(styleElement);
+		}
+		styleElement.appendChild(document.createTextNode(newStyle));
+	}
+
 })(jQuery);
 
 
