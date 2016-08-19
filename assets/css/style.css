@@ -4860,23 +4860,25 @@ WR MegaMenu
 	}
 }
 
-@media only screen and (min-width: 768px) {
-
-	.wr-megamenu-container a.menu-item-link {
-		margin-right: 0 !important;
-	}
-
-	.wr-megamenu-container ul.wr-mega-menu > li.wr-megamenu-item > a.menu-item-link {
-		padding: 15px !important;
-	}
-
-	.wr-megamenu-container ul.wr-mega-menu li .wr-megamenu-inner {
-		text-align: left !important;
-		background: #0f120c !important;
-		color: rgba(255, 255, 255, .7) !important;
-		border: none !important;
-		text-transform: none !important;
-		letter-spacing: 1px !important;
-	}
-
+@media screen and (min-width: 768px) and (max-width: 783px) {
+    .wr-megamenu-container ul.wr-mega-menu > li {
+        border: 0 !important;
+        display: inline-block !important;
+        width: auto !important;
+    }
+    .wr-megamenu-container ul.wr-mega-menu > li.wr-megamenu-item > a.menu-item-link {
+        margin-right: 0 !important;
+    }
+    .wr-mega-menu .wr-menu-down {
+        width: 15px !important;
+    }
+    .wr-mega-menu > li > a, .wr-megamenu-container a {
+        padding: 15px !important;
+    }
+    .wr-mega-menu .wr-menu-down {
+        margin: -42px 7px 0 0 !important;
+    }
+    .wr-mega-menu .wr-menu-down {
+        width: 15px !important;
+    }
 }
