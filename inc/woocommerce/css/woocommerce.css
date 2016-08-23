@@ -1632,6 +1632,7 @@ ul.products li.product.first {
 
 .woocommerce-pagination .page-numbers.current {
     border-color: #CACACA;
+    display: inline-block;
 }
 
 .woocommerce-pagination ul.page-numbers {
@@ -3143,9 +3144,10 @@ Breacrumb
 	margin-right: 0;
 }
 .woocommerce-pagination {
-	width: 100%;
+    width: auto;
 	float: left;
 	text-align: left;
+    margin-top: -5px;
 }
 .page-numbers {
 	text-align: left;
@@ -3819,6 +3821,9 @@ a.button.compare:hover {
         width: 750px;
     }
 
+    .woocommerce-pagination {
+        float: none;
+    }
     /*My Account Styling*/
     .woocommerce-account .woocommerce-MyAccount-navigation {
         width: 100%;
@@ -4108,9 +4113,9 @@ a.button.compare:hover {
         width: 100%;
     }
 
-    .cross-sells ul.products li.product {
-
-    }
+    .woocommerce-pagination {
+        width: 100%;
+     }
 }
 
 @media(max-width: 480px) {
