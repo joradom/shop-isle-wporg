@@ -3116,11 +3116,12 @@ Post
 	text-transform: uppercase;
 	text-align: center;
 	color: #999;
-	padding: 7px 12px;
+    padding: 4px 12px;
 }
 
 .woocommerce-pagination ul.page-numbers li a {
 	color: #111;
+    display: inline-block;
 }
 
 .pagination a.active {
@@ -4773,6 +4774,36 @@ WR MegaMenu
 	text-align: center;
 }
 
+/* -------------------------------------------------------------------
+Woocommerce Products Per Page
+------------------------------------------------------------------- */
+.products-per-page select {
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 2px;
+    font-size: 12px;
+    height: 33px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .products-per-page {
+        float: right;
+        margin-left: 5px;
+        width: 100%;
+        margin-right: 0;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-top: 20px;
+    }
+    .products-per-page select {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
 @media only screen and (max-width: 767px) {
 	.wr-megamenu-container {
 		text-align: left !important;
@@ -4882,3 +4913,5 @@ WR MegaMenu
         width: 15px !important;
     }
 }
+
+
