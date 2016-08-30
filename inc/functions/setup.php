@@ -556,3 +556,8 @@ function shop_isle_php_style() {
 
 	echo '</style>';
 }
+
+add_action( 'init','shop_isle_option_used_for_pro' );
+function shop_isle_option_used_for_pro() {
+	update_option( 'shop_isle_location','shop_isle_from_wporg' );
+}
