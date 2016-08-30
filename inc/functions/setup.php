@@ -558,6 +558,35 @@ function shop_isle_php_style() {
 }
 
 add_action( 'init','shop_isle_option_used_for_pro' );
+
+/* Function used for tranzition to PRO */
 function shop_isle_option_used_for_pro() {
-	update_option( 'shop_isle_location','shop_isle_from_wporg' );
+
+	$shop_isle_wporg_flag = array();
+
+	$shop_isle_show_on_front = get_option( 'show_on_front' );
+
+	if( !empty($shop_isle_show_on_front) && ($shop_isle_show_on_front == 'page') )  {
+
+		$shop_isle_wporg_flag['type'] = 'page';
+
+		$shop_isle_page_on_front = get_option( 'page_on_front' );
+		
+		if( !empty($shop_isle_page_on_front) ) {
+			$shop_isle_wporg_flag['frontpage'] = $shop_isle_page_on_front;
+		}
+
+		$shop_isle_page_for_posts = get_option( 'page_for_posts' );
+
+		if( !empty($shop_isle_page_for_posts) ) {
+			$shop_isle_wporg_flag['blog'] = $shop_isle_page_for_posts;
+		}
+
+		
+	} else {
+		$shop_isle_wporg_flag['type'] = 'posts';
+	}
+
+	update_option( 'shop_isle_wporg',$shop_isle_wporg_flag );
+
 }
