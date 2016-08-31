@@ -3722,6 +3722,10 @@ a.button.compare:hover {
     text-decoration: underline;
 }
 
+#ship-to-different-address .checkbox {
+    display: inline-block;
+}
+
 @media screen and (max-width: 1200px) {
     .page-title ~ .woocommerce-error,
     .page-title ~ .woocommerce-info,
