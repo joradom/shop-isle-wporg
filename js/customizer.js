@@ -110,6 +110,13 @@
 	/********************************/
     /*********	Banners section *****/
 	/********************************/
+    wp.customize( 'shop_isle_banners_title', function( value ) {
+        value.bind( function( to ) {
+            $( '.product-banners-title' ).text( to );
+        } );
+    } );
+
+
 	wp.customize( 'shop_isle_banners_hide', function( value ) {
 		value.bind( function( to ) {
 			if( to != '1' ) {
