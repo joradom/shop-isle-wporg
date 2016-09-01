@@ -253,7 +253,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_banners', array(
 		'label'   => __('Add new banner','shop-isle'),
 		'section' => 'shop_isle_banners_section',
-		'priority' => 2,
+		'priority' => 3,
         'shop_isle_image_control' => true,
         'shop_isle_link_control' => true,
         'shop_isle_text_control' => false,
