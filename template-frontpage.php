@@ -127,18 +127,19 @@
 							
 						echo '<div class="container">';
 
-							if ( isset($shop_isle_banners_title) && trim($shop_isle_banners_title) !== '' ) {
-
+							if ( !empty($shop_isle_banners_title) ) {
 								echo '<div class="row">';
-
 									echo '<div class="col-sm-6 col-sm-offset-3">';
-
 										echo '<h2 class="module-title font-alt product-banners-title">'. $shop_isle_banners_title .'</h2>';
-
 									echo '</div>';
-
 								echo '</div>';
 
+							} elseif ( is_customize_preview() ) {
+								echo '<div class="row">';
+									echo '<div class="col-sm-6 col-sm-offset-3">';
+										echo '<h2 class="module-title font-alt product-banners-title shop_isle_hidden_if_not_customizer"></h2>';
+									echo '</div>';
+								echo '</div>';
 							}
 
 							echo '<div class="row shop_isle_bannerss_section">';
