@@ -3046,6 +3046,11 @@ Post
 	margin-top: 10px;
 }
 
+.post-entry ul,
+.post-entry ol {
+	margin-left: 0px;
+}
+
 .post-images-slider {
 	position: relative;
 }
