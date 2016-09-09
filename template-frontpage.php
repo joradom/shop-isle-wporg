@@ -287,27 +287,27 @@
 												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
-												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
+												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) && !empty( $product->get_display_price() ) ) {
 													if( function_exists('get_woocommerce_price_format') ) {
 														$format_string = get_woocommerce_price_format();
 													}
 													if( !empty($format_string) ) {
 														switch ( $format_string ) {
 															case '%1$s%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->get_display_price().'</span>';
 																break;
 															case '%2$s%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 															case '%1$s&nbsp;%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->get_display_price().'</span>';
 																break;
 															case '%2$s&nbsp;%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 														}
 													} else {
-														echo get_woocommerce_currency_symbol().$product->price;
+														echo get_woocommerce_currency_symbol().$product->get_display_price();
 													}
 												}
 											echo '</div><!-- .shop-item -->';
@@ -389,27 +389,27 @@
 												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
-												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
+												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) && !empty( $product->get_display_price() ) ) {
 													if( function_exists('get_woocommerce_price_format') ) {
 														$format_string = get_woocommerce_price_format();
 													}
 													if( !empty($format_string) ) {
 														switch ( $format_string ) {
 															case '%1$s%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->get_display_price().'</span>';
 																break;
 															case '%2$s%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 															case '%1$s&nbsp;%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->get_display_price().'</span>';
 																break;
 															case '%2$s&nbsp;%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 														}
 													} else {
-														echo get_woocommerce_currency_symbol().$product->price;
+														echo get_woocommerce_currency_symbol().$product->get_display_price();
 													}
 												}
 											echo '</div>';
@@ -567,27 +567,27 @@
 												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
-												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
+												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) && !empty( $product->get_display_price() ) ) {
 													if( function_exists('get_woocommerce_price_format') ) {
 														$format_string = get_woocommerce_price_format();
 													}	
 													if( !empty($format_string) ) {
 														switch ( $format_string ) {
 															case '%1$s%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->get_display_price().'</span>';
 																break;
 															case '%2$s%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 															case '%1$s&nbsp;%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->get_display_price().'</span>';
 																break;
 															case '%2$s&nbsp;%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 														}
 													} else {
-														echo get_woocommerce_currency_symbol().$product->price;
+														echo get_woocommerce_currency_symbol().$product->get_display_price();
 													}
 												}
 											echo '</div><!-- .ex-product -->';
@@ -633,27 +633,27 @@
 												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
-												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
+												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) && !empty( $product->get_display_price() ) ) {
 													if( function_exists('get_woocommerce_price_format') ) {
 														$format_string = get_woocommerce_price_format();
 													}
 													if( !empty($format_string) ) {
 														switch ( $format_string ) {
 															case '%1$s%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->get_display_price().'</span>';
 																break;
 															case '%2$s%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 															case '%1$s&nbsp;%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->get_display_price().'</span>';
 																break;
 															case '%2$s&nbsp;%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 														}
 													} else {
-														echo get_woocommerce_currency_symbol().$product->price;
+														echo get_woocommerce_currency_symbol().$product->get_display_price();
 													}
 												}
 											echo '</div><!-- .ex-product -->';
