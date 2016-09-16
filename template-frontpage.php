@@ -475,45 +475,47 @@
 	/**********************************/
 	/*********    VIDEO **************/
 	/*********************************/
-	
+
 	$shop_isle_video_hide = get_theme_mod('shop_isle_video_hide');
 	$shop_isle_yt_link = get_theme_mod('shop_isle_yt_link');
-	
-	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) {	
+	$shop_isle_yt_thumbnail = get_theme_mod('shop_isle_yt_thumbnail');
+
+	if( empty($shop_isle_yt_thumbnail) ) {
+		$shop_isle_do_video_thumbnail = preg_match( '/\/\/(www\.)?(youtu|youtube)\.(com|be)\/(watch|embed)?\/?(\?v=)?([a-zA-Z0-9\-\_]+)/', $shop_isle_yt_link, $shop_isle_youtube_matches );
+		$shop_isle_youtube_id = ! empty( $shop_isle_youtube_matches ) ? $shop_isle_youtube_matches[6] : '';
+		$shop_isle_yt_thumbnail = 'http://img.youtube.com/vi/' . $shop_isle_youtube_id . '/maxresdefault.jpg';
+	}
+
+	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) {
 		echo '<section class="module module-video bg-dark-30">';
 	} elseif ( !empty($shop_isle_yt_link) && is_customize_preview() ) {
 		echo '<section class="module module-video bg-dark-30 shop_isle_hidden_if_not_customizer">';
 	}
 
 	if( ( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) || ( !empty($shop_isle_yt_link) && is_customize_preview() )  ) {
+		echo '<div class="module-video-thumbnail"'. ( !empty( $shop_isle_yt_thumbnail ) ? ' style="background-image: url('.$shop_isle_yt_thumbnail.')' : '' ) .'"></div>';
+			echo '<div>';
 
-			$shop_isle_video_title = get_theme_mod('shop_isle_video_title');
-			if( !empty($shop_isle_video_title) ) {
-		
-				echo '<div class="container">';
-
-					echo '<div class="row">';
-						echo '<div class="col-sm-12">';
-							echo '<h2 class="module-title font-alt mb-0 video-title">'.$shop_isle_video_title.'</h2>';
+				$shop_isle_video_title = get_theme_mod('shop_isle_video_title');
+				if( !empty($shop_isle_video_title) ):
+					echo '<div class="container">';
+						echo '<div class="row">';
+							echo '<div class="col-sm-12">';
+								echo '<h2 class="module-title font-alt mb-0 video-title">'.$shop_isle_video_title.'</h2>';
+							echo '</div>';
 						echo '</div>';
 					echo '</div>';
-
-				echo '</div>';
-		
-			}
-
-			?>
-			<!-- Youtube player start-->
-			<div class="video-player" data-property="{videoURL:'<?php echo $shop_isle_yt_link; ?>', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
-			<!-- Youtube player end -->
-			<?php
-
-				
+				endif;
+				?>
+				<!-- Youtube player start-->
+				<div class="video-player" data-property="{videoURL:'<?php echo $shop_isle_yt_link; ?>', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
+				<!-- Youtube player end -->
+				<?php
+			echo '</div>';
 		echo '</section><!-- .module-video -->';
-		
-	} /* END VIDEO */	
-	
-	
+
+	} /* END VIDEO */
+
 	/******************************/
 	/**** Products slider *********/
 	/******************************/
