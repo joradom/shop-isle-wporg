@@ -439,6 +439,18 @@ function shop_isle_customize_register( $wp_customize ) {
 		'priority'    => 3,
 	));
 
+	/* Thumbnail */
+	$wp_customize->add_setting( 'shop_isle_yt_thumbnail', array(
+		'sanitize_callback' => 'esc_url'
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'shop_isle_yt_thumbnail', array(
+		'label'    	=> __( 'Video thumbnail', 'shop-isle' ),
+		'description' => __( 'This image will appear while the video is downloading. If this is not included, the first frame of the video will be used instead.', 'shop-isle' ),
+		'section'  	=> 'shop_isle_video_section',
+		'priority'	=> 4,
+	) ) );
+
 	/****************************************/
     /*******  Products slider section *******/
 	/****************************************/
