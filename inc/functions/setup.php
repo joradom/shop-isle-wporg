@@ -242,11 +242,6 @@ function shop_isle_register_required_plugins() {
 					'name'      => 'WooCommerce',
 					'slug'      => 'woocommerce',
 					'required'  => false,
-				),
-				array(
-					'name'      => 'Simple Contact Form Plugin - PirateForms',
-					'slug'      => 'pirate-forms',
-					'required'  => false,
 				)
 			);
 	
