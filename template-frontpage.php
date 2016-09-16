@@ -237,13 +237,24 @@
 						
 						} elseif( isset($shop_isle_products_category) && !empty($shop_isle_products_category) && ($shop_isle_products_category != '-') ) {
 							
-							$shop_isle_latest_args = array( 'post_type' => 'product', 'posts_per_page' => 8, 'orderby' =>'date','order' => 'DESC', 'tax_query' => array(
-								array(
-									'taxonomy'  => 'product_cat',
-									'field'     => 'term_id', 
-									'terms'     => $shop_isle_products_category
-								)
-							) );
+							$shop_isle_latest_args = array(
+								'post_type' => 'product',
+								'posts_per_page' => 8,
+								'orderby' =>'date',
+								'order' => 'DESC',
+								'tax_query' => array(
+									array(
+										'taxonomy'  => 'product_cat',
+										'field'     => 'term_id',
+										'terms'     => $shop_isle_products_category
+									)),
+								'meta_query' => array(
+									array(
+										'key' => '_visibility',
+										'value' => 'hidden',
+										'compare' => '!=',
+									)),
+								);
 							
 							$shop_isle_latest_loop = new WP_Query( $shop_isle_latest_args );
 							
@@ -344,7 +355,18 @@
 						
 						} else {
 						
-							$shop_isle_latest_args = array( 'post_type' => 'product', 'posts_per_page' => 8, 'orderby' =>'date','order' => 'DESC' );
+							$shop_isle_latest_args = array(
+								'post_type' => 'product',
+								'posts_per_page' => 8,
+								'orderby' =>'date',
+								'order' => 'DESC',
+								'meta_query' => array(
+									array(
+										'key' => '_visibility',
+										'value' => 'hidden',
+										'compare' => '!=',
+									)),
+								);
 							
 							$shop_isle_latest_loop = new WP_Query( $shop_isle_latest_args );
 							
@@ -534,13 +556,22 @@
 				
 				if( !empty($shop_isle_products_slider_category) && ($shop_isle_products_slider_category != '-') ) {
 			
-					$shop_isle_products_slider_args = array( 'post_type' => 'product', 'posts_per_page' => 10, 'tax_query' => array(
+					$shop_isle_products_slider_args = array(
+						'post_type' => 'product',
+						'posts_per_page' => 10,
+					    'tax_query' => array(
 						array(
 							'taxonomy' => 'product_cat',
 							'field'    => 'term_id',
 							'terms'    => $shop_isle_products_slider_category,
-						)
-					));
+						)),
+						'meta_query' => array(
+							array(
+								'key' => '_visibility',
+								'value' => 'hidden',
+								'compare' => '!=',
+							)),
+						);
 
 					$shop_isle_products_slider_loop = new WP_Query( $shop_isle_products_slider_args );
 
@@ -606,7 +637,16 @@
 					
 				} else {
 					
-					$shop_isle_products_slider_args = array( 'post_type' => 'product', 'posts_per_page' => 10);
+					$shop_isle_products_slider_args = array(
+						'post_type' => 'product',
+						'posts_per_page' => 10,
+						'meta_query' => array(
+							array(
+								'key' => '_visibility',
+								'value' => 'hidden',
+								'compare' => '!=',
+							)),
+						);
 
 					$shop_isle_products_slider_loop = new WP_Query( $shop_isle_products_slider_args );
 
