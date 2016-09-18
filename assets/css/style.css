@@ -4937,4 +4937,11 @@ Woocommerce Products Per Page
     }
 }
 
-
+/* -------------------------------------------------------------------
+WP Show Posts
+------------------------------------------------------------------- */
+#customer_details .col-1,
+#customer_details .col-2 {
+    width: 100%;
+    clear: left;
+}
