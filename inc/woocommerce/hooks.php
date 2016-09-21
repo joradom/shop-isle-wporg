@@ -42,6 +42,9 @@ add_action( 'woocommerce_after_shop_loop', 			'shop_isle_woocommerce_pagination'
 add_action( 'woocommerce_after_shop_loop',			'shop_isle_sorting_wrapper_close',			25 );
 add_action( 'woocommerce_after_shop_loop', 			'shop_isle_shop_page_wrapper_end', 			40 );
 
+add_action( 'woocommerce_before_shop_loop', 		'shop_isle_shop_page_sidebar', 			30 );
+add_action( 'woocommerce_after_shop_loop', 			'shop_isle_shop_page_sidebar_end', 			30 );
+
 add_action( 'woocommerce_after_main_content', 		'shop_isle_after_content', 				    50 );
 
 add_filter( 'woocommerce_page_title', 'shop_isle_header_shop_page');
