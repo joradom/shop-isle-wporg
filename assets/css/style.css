@@ -3505,20 +3505,43 @@ Widgets
 	text-align: center;
 }
 
-.widget form input[type=submit] {
-    position: absolute;
-    background: transparent;
-    border: none;
-    overflow: hidden;
-    right: 1px;
-    width: 33px;
-    height: 33px;
-    line-height: 38px;
-    font-size: 14px;
-    outline: none;
-    color: #999;
-    text-indent: -99999999px;
-    top: 0;
+.widget input[type=submit] {
+	background: rgba(17, 17, 17, 1);
+	color: #fff;
+	font-family: "Roboto Condensed", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 11px;
+	padding: 8px 37px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	width: auto;
+	border: none;
+}
+
+.widget input[type=submit]:hover {
+	opacity: 0.8;
+}
+
+.shop_isle_footer_sidebar .widget input[type=submit] {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.widget.widget_search form input[type=submit] {
+	position: absolute;
+	background: transparent;
+	border: none;
+	overflow: hidden;
+	right: 1px;
+	width: 33px;
+	height: 33px;
+	line-height: 38px;
+	font-size: 14px;
+	outline: none;
+	color: #999;
+	text-indent: -99999999px;
+	top: 0;
 }
 
 .widget .icon-list li {
