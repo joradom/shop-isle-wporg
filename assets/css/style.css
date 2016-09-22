@@ -3379,8 +3379,9 @@ Post
 /*
 Pirate Forms 
 */
-.pirate_forms_wrap .form_field_wrap {
-	padding-left: 0px;
+.widget .pirate_forms_wrap .form_field_wrap {
+    padding-left: 0;
+    padding-right: 0;
 }
 .pirate_forms_wrap .form_field_wrap textarea {
 	min-height: 100px;
