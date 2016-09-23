@@ -41,6 +41,7 @@ if ( ! function_exists( 'shop_isle_after_content' ) ) {
  */
 if ( ! function_exists( 'shop_isle_shop_page_wrapper' ) ) {
 	function shop_isle_shop_page_wrapper() {
+
 		?>
 		<section class="module-small module-small-shop">
 				<div class="container">
@@ -491,4 +492,17 @@ if ( !function_exists( 'shop_isle_woocommerce_product_archive_description' ) ) {
 			}
 		}
 	}
+}
+
+/* Fix for Shop page set up as static frontpage problem with the sidebar */
+function shop_isle_woocommerce_breadcrumb() {
+
+    if (function_exists('woocommerce_breadcrumb')) {
+        if (is_front_page()) {
+            echo '<nav class="woocommerce-breadcrumb"><a href="'.esc_url( home_url( '/' ) ).'">Home</a></nav>';
+        } else {
+           woocommerce_breadcrumb();
+        }
+    }
+
 }
