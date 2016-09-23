@@ -1,3 +1,27 @@
+### 1.1.6.5 - 23/09/2016
+
+**Changes:**
+
+- Fixed layout for lists
+
+- Fixed issues with WooCommerce products taxes not showing on frontpage
+
+- Fixed issues with hidden products showing on frontpage
+
+- Reorganize customizer - moved 404 page options in Advanced Options
+
+- Recommend Pirate Forms plugin instead of Contact Form 7 for the contact page
+
+- Fixed mobile issues with the video, plus new option for placeholder image for the video
+
+- Fixed conflict with the WP Show Products plugin
+
+- Fixed issue with products not clickable on mobile
+
+- Improved layout for submit buttons in widgets
+
+- Fixed issue whith the shop page set up as frontpage
+
 ### 1.1.6.4 - 01/09/2016
 
 **Changes:**
