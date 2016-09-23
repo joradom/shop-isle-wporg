@@ -615,7 +615,7 @@ function shop_isle_customize_register( $wp_customize ) {
 		'label'    => __( 'Contact form shortcode', 'shop-isle' ),
 		'description' => sprintf(
 							__( 'Create a form, copy the shortcode generated and paste it here. We recommend %1$s but you can use any plugin you like.', 'shop-isle' ),
-							sprintf( '<a href="'.esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=pirate-forms' ), 'install-plugin_pirate-forms' ) ).'">%s</a>', esc_html__( 'Simple Contact Form Plugin - PirateForms', 'shop-isle' ) )
+							sprintf( '<a href="'.esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=pirate-forms' ), 'install-plugin_pirate-forms' ) ).'">%s</a>', 'Simple Contact Form Plugin - PirateForms' )
 						),
 		'section'  => 'shop_isle_contact_page_section',
 		'active_callback' => 'shop_isle_is_contact_page',
