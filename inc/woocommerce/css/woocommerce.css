@@ -3829,7 +3829,9 @@ a.button.compare:hover {
     }
 
     .woocommerce-pagination {
-        float: none;
+        float: left;
+        width: 100%;
+
     }
     /*My Account Styling*/
     .woocommerce-account .woocommerce-MyAccount-navigation {

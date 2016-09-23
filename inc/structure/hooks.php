@@ -100,7 +100,8 @@ add_filter( 'body_class',			'shop_isle_body_classes' );
 /**
  * Shop page
  */
-add_action( 'shop_isle_before_shop', 		'woocommerce_breadcrumb',	             	10 );
+
+add_action( 'shop_isle_before_shop', 		'shop_isle_woocommerce_breadcrumb',	        10 );
 add_action( 'shop_isle_before_shop', 		'woocommerce_catalog_ordering',				20 );
  
 /*

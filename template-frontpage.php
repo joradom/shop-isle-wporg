@@ -237,13 +237,24 @@
 						
 						} elseif( isset($shop_isle_products_category) && !empty($shop_isle_products_category) && ($shop_isle_products_category != '-') ) {
 							
-							$shop_isle_latest_args = array( 'post_type' => 'product', 'posts_per_page' => 8, 'orderby' =>'date','order' => 'DESC', 'tax_query' => array(
-								array(
-									'taxonomy'  => 'product_cat',
-									'field'     => 'term_id', 
-									'terms'     => $shop_isle_products_category
-								)
-							) );
+							$shop_isle_latest_args = array(
+								'post_type' => 'product',
+								'posts_per_page' => 8,
+								'orderby' =>'date',
+								'order' => 'DESC',
+								'tax_query' => array(
+									array(
+										'taxonomy'  => 'product_cat',
+										'field'     => 'term_id',
+										'terms'     => $shop_isle_products_category
+									)),
+								'meta_query' => array(
+									array(
+										'key' => '_visibility',
+										'value' => 'hidden',
+										'compare' => '!=',
+									)),
+								);
 							
 							$shop_isle_latest_loop = new WP_Query( $shop_isle_latest_args );
 							
@@ -287,27 +298,27 @@
 												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
-												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
+												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) && !empty( $product->get_display_price() ) ) {
 													if( function_exists('get_woocommerce_price_format') ) {
 														$format_string = get_woocommerce_price_format();
 													}
 													if( !empty($format_string) ) {
 														switch ( $format_string ) {
 															case '%1$s%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->get_display_price().'</span>';
 																break;
 															case '%2$s%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 															case '%1$s&nbsp;%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->get_display_price().'</span>';
 																break;
 															case '%2$s&nbsp;%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 														}
 													} else {
-														echo get_woocommerce_currency_symbol().$product->price;
+														echo get_woocommerce_currency_symbol().$product->get_display_price();
 													}
 												}
 											echo '</div><!-- .shop-item -->';
@@ -344,7 +355,18 @@
 						
 						} else {
 						
-							$shop_isle_latest_args = array( 'post_type' => 'product', 'posts_per_page' => 8, 'orderby' =>'date','order' => 'DESC' );
+							$shop_isle_latest_args = array(
+								'post_type' => 'product',
+								'posts_per_page' => 8,
+								'orderby' =>'date',
+								'order' => 'DESC',
+								'meta_query' => array(
+									array(
+										'key' => '_visibility',
+										'value' => 'hidden',
+										'compare' => '!=',
+									)),
+								);
 							
 							$shop_isle_latest_loop = new WP_Query( $shop_isle_latest_args );
 							
@@ -389,27 +411,27 @@
 												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
-												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
+												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) && !empty( $product->get_display_price() ) ) {
 													if( function_exists('get_woocommerce_price_format') ) {
 														$format_string = get_woocommerce_price_format();
 													}
 													if( !empty($format_string) ) {
 														switch ( $format_string ) {
 															case '%1$s%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->get_display_price().'</span>';
 																break;
 															case '%2$s%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 															case '%1$s&nbsp;%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->get_display_price().'</span>';
 																break;
 															case '%2$s&nbsp;%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 														}
 													} else {
-														echo get_woocommerce_currency_symbol().$product->price;
+														echo get_woocommerce_currency_symbol().$product->get_display_price();
 													}
 												}
 											echo '</div>';
@@ -453,45 +475,47 @@
 	/**********************************/
 	/*********    VIDEO **************/
 	/*********************************/
-	
+
 	$shop_isle_video_hide = get_theme_mod('shop_isle_video_hide');
 	$shop_isle_yt_link = get_theme_mod('shop_isle_yt_link');
-	
-	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) {	
+	$shop_isle_yt_thumbnail = get_theme_mod('shop_isle_yt_thumbnail');
+
+	if( empty($shop_isle_yt_thumbnail) ) {
+		$shop_isle_do_video_thumbnail = preg_match( '/\/\/(www\.)?(youtu|youtube)\.(com|be)\/(watch|embed)?\/?(\?v=)?([a-zA-Z0-9\-\_]+)/', $shop_isle_yt_link, $shop_isle_youtube_matches );
+		$shop_isle_youtube_id = ! empty( $shop_isle_youtube_matches ) ? $shop_isle_youtube_matches[6] : '';
+		$shop_isle_yt_thumbnail = 'http://img.youtube.com/vi/' . $shop_isle_youtube_id . '/maxresdefault.jpg';
+	}
+
+	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) {
 		echo '<section class="module module-video bg-dark-30">';
 	} elseif ( !empty($shop_isle_yt_link) && is_customize_preview() ) {
 		echo '<section class="module module-video bg-dark-30 shop_isle_hidden_if_not_customizer">';
 	}
 
 	if( ( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) || ( !empty($shop_isle_yt_link) && is_customize_preview() )  ) {
+		echo '<div class="module-video-thumbnail"'. ( !empty( $shop_isle_yt_thumbnail ) ? ' style="background-image: url('.$shop_isle_yt_thumbnail.')' : '' ) .'"></div>';
+			echo '<div>';
 
-			$shop_isle_video_title = get_theme_mod('shop_isle_video_title');
-			if( !empty($shop_isle_video_title) ) {
-		
-				echo '<div class="container">';
-
-					echo '<div class="row">';
-						echo '<div class="col-sm-12">';
-							echo '<h2 class="module-title font-alt mb-0 video-title">'.$shop_isle_video_title.'</h2>';
+				$shop_isle_video_title = get_theme_mod('shop_isle_video_title');
+				if( !empty($shop_isle_video_title) ):
+					echo '<div class="container">';
+						echo '<div class="row">';
+							echo '<div class="col-sm-12">';
+								echo '<h2 class="module-title font-alt mb-0 video-title">'.$shop_isle_video_title.'</h2>';
+							echo '</div>';
 						echo '</div>';
 					echo '</div>';
-
-				echo '</div>';
-		
-			}
-
-			?>
-			<!-- Youtube player start-->
-			<div class="video-player" data-property="{videoURL:'<?php echo $shop_isle_yt_link; ?>', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
-			<!-- Youtube player end -->
-			<?php
-
-				
+				endif;
+				?>
+				<!-- Youtube player start-->
+				<div class="video-player" data-property="{videoURL:'<?php echo $shop_isle_yt_link; ?>', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
+				<!-- Youtube player end -->
+				<?php
+			echo '</div>';
 		echo '</section><!-- .module-video -->';
-		
-	} /* END VIDEO */	
-	
-	
+
+	} /* END VIDEO */
+
 	/******************************/
 	/**** Products slider *********/
 	/******************************/
@@ -534,13 +558,22 @@
 				
 				if( !empty($shop_isle_products_slider_category) && ($shop_isle_products_slider_category != '-') ) {
 			
-					$shop_isle_products_slider_args = array( 'post_type' => 'product', 'posts_per_page' => 10, 'tax_query' => array(
+					$shop_isle_products_slider_args = array(
+						'post_type' => 'product',
+						'posts_per_page' => 10,
+					    'tax_query' => array(
 						array(
 							'taxonomy' => 'product_cat',
 							'field'    => 'term_id',
 							'terms'    => $shop_isle_products_slider_category,
-						)
-					));
+						)),
+						'meta_query' => array(
+							array(
+								'key' => '_visibility',
+								'value' => 'hidden',
+								'compare' => '!=',
+							)),
+						);
 
 					$shop_isle_products_slider_loop = new WP_Query( $shop_isle_products_slider_args );
 
@@ -567,27 +600,27 @@
 												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
-												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
+												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) && !empty( $product->get_display_price() ) ) {
 													if( function_exists('get_woocommerce_price_format') ) {
 														$format_string = get_woocommerce_price_format();
 													}	
 													if( !empty($format_string) ) {
 														switch ( $format_string ) {
 															case '%1$s%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->get_display_price().'</span>';
 																break;
 															case '%2$s%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 															case '%1$s&nbsp;%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->get_display_price().'</span>';
 																break;
 															case '%2$s&nbsp;%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 														}
 													} else {
-														echo get_woocommerce_currency_symbol().$product->price;
+														echo get_woocommerce_currency_symbol().$product->get_display_price();
 													}
 												}
 											echo '</div><!-- .ex-product -->';
@@ -606,7 +639,16 @@
 					
 				} else {
 					
-					$shop_isle_products_slider_args = array( 'post_type' => 'product', 'posts_per_page' => 10);
+					$shop_isle_products_slider_args = array(
+						'post_type' => 'product',
+						'posts_per_page' => 10,
+						'meta_query' => array(
+							array(
+								'key' => '_visibility',
+								'value' => 'hidden',
+								'compare' => '!=',
+							)),
+						);
 
 					$shop_isle_products_slider_loop = new WP_Query( $shop_isle_products_slider_args );
 
@@ -633,27 +675,27 @@
 												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
-												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
+												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) && !empty( $product->get_display_price() ) ) {
 													if( function_exists('get_woocommerce_price_format') ) {
 														$format_string = get_woocommerce_price_format();
 													}
 													if( !empty($format_string) ) {
 														switch ( $format_string ) {
 															case '%1$s%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$product->get_display_price().'</span>';
 																break;
 															case '%2$s%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 															case '%1$s&nbsp;%2$s' :
-																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->price.'</span>';
+																echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$product->get_display_price().'</span>';
 																break;
 															case '%2$s&nbsp;%1$s' :
-																echo '<span class="shop-item-price">'.$product->price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+																echo '<span class="shop-item-price">'.$product->get_display_price().' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 																break;
 														}
 													} else {
-														echo get_woocommerce_currency_symbol().$product->price;
+														echo get_woocommerce_currency_symbol().$product->get_display_price();
 													}
 												}
 											echo '</div><!-- .ex-product -->';
