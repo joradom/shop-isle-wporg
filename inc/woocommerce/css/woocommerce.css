@@ -2842,6 +2842,7 @@ Single product page
 .shop-with-sidebar {
     float: right;
     padding: 0;
+    clear: right;
 }
 
 /****
@@ -3829,7 +3830,9 @@ a.button.compare:hover {
     }
 
     .woocommerce-pagination {
-        float: none;
+        float: left;
+        width: 100%;
+
     }
     /*My Account Styling*/
     .woocommerce-account .woocommerce-MyAccount-navigation {

@@ -3379,8 +3379,10 @@ Post
 /*
 Pirate Forms 
 */
-.pirate_forms_wrap .form_field_wrap {
-	padding-left: 0px;
+.widget .pirate_forms_wrap .form_field_wrap {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
 }
 .pirate_forms_wrap .form_field_wrap textarea {
 	min-height: 100px;
@@ -3464,7 +3466,9 @@ Widgets
 	position: relative;
 }
 
-.widget input[type=search] {
+.widget input[type=search],
+.widget input:not([type=submit]),
+.widget textarea {
 	font-family: "Roboto Condensed", sans-serif;
     letter-spacing: 2px;
     font-size: 12px;
@@ -3480,6 +3484,7 @@ Widgets
 	-moz-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
+    color: #666;
 }
 
 .widget input[type=search]:focus {
@@ -3505,20 +3510,43 @@ Widgets
 	text-align: center;
 }
 
-.widget form input[type=submit] {
-    position: absolute;
-    background: transparent;
-    border: none;
-    overflow: hidden;
-    right: 1px;
-    width: 33px;
-    height: 33px;
-    line-height: 38px;
-    font-size: 14px;
-    outline: none;
-    color: #999;
-    text-indent: -99999999px;
-    top: 0;
+.widget input[type=submit] {
+	background: rgba(17, 17, 17, 1);
+	color: #fff;
+	font-family: "Roboto Condensed", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 11px;
+	padding: 8px 37px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	width: auto;
+	border: none;
+}
+
+.widget input[type=submit]:hover {
+	opacity: 0.8;
+}
+
+.shop_isle_footer_sidebar .widget input[type=submit] {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.widget.widget_search form input[type=submit] {
+	position: absolute;
+	background: transparent;
+	border: none;
+	overflow: hidden;
+	right: 1px;
+	width: 33px;
+	height: 33px;
+	line-height: 38px;
+	font-size: 14px;
+	outline: none;
+	color: #999;
+	text-indent: -99999999px;
+	top: 0;
 }
 
 .widget .icon-list li {
