@@ -1,3 +1,9 @@
+### 1.1.6.6 - 24/09/2016
+
+**Changes:**
+
+- Fixed fatal error with lower versions of PHP
+
 ### 1.1.6.5 - 23/09/2016
 
 **Changes:**
