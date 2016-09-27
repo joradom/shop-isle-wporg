@@ -216,10 +216,4 @@ jQuery(document).ready(function(){
 		event.preventDefault();
 	});
 
-	/* Locked sections */
-	jQuery('#accordion-section-shop_isle_upsell_section').click(function() {
-		jQuery('.wp-full-overlay').removeClass('section-open');
-		jQuery('#accordion-section-shop_isle_upsell_section').removeClass('open');
-		window.location.href = "http://themeisle.com/themes/shop-isle-pro/";
-	});
 });
