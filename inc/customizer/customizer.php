@@ -64,6 +64,14 @@ function shop_isle_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+	/***********************************************/
+	/******************* UPSELL ********************/
+	/***********************************************/
+
+	$wp_customize->add_section( new ShopIsle_Top_Upsells( $wp_customize, 'shop-isle-upsell', array(
+		'priority'   => '-1',
+	) ) );
+
 
 	/******************************/
 	/**********  Header ***********/
