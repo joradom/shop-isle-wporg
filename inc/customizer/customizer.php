@@ -72,18 +72,6 @@ function shop_isle_customize_register( $wp_customize ) {
 		'priority'   => '-1',
 	) ) );
 
-	$wp_customize->add_section( 'shop_isle_upsell_section', array(
-		'title'	=> __( 'Sections order and Colors', 'shop-isle' ),
-		'priority' => 35
-	));
-
-	$wp_customize->add_setting( 'shop_isle_upsell', array(
-		'sanitize_callback' => 'shop_isle_sanitize_text'
-	));
-
-	$wp_customize->add_control( new ShopIsle_Upsell_Section( $wp_customize, 'shop_isle_upsell', array(
-		'section' => 'shop_isle_upsell_section',
-	)));
 
 	/******************************/
 	/**********  Header ***********/
