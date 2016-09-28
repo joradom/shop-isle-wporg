@@ -167,8 +167,8 @@ if ( class_exists( 'WP_Customize_Control' ) ):
             }
 	 ?>
 
+			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 			<div class="shop_isle_general_control_repeater shop_isle_general_control_droppable">
-				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 					<?php
 						if(empty($json)) {
 					?>
