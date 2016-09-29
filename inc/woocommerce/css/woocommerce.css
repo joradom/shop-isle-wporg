@@ -3044,7 +3044,8 @@ ul.products li.product .product-button-wrap .button.product_type_simple,
 }
 .product .product-button-wrap .add_to_cart_button:hover,
 ul.products li.product .product-button-wrap .button.product_type_simple:hover,
-.shop-item .product-button-wrap .add_to_cart_button:hover  {
+.shop-item .product-button-wrap .add_to_cart_button:hover,
+ul.products li.product .product-button-wrap .product_type_variable:hover {
 	background: rgba(17, 17, 17, .8);
 }
 .shop-with-sidebar .product .product-button-wrap .add_to_cart_button, 
