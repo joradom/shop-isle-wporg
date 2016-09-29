@@ -36,42 +36,11 @@ function shop_isle_customize_register( $wp_customize ) {
 		}
 	}
 
-	class ShopIsle_Top_Upsells extends WP_Customize_Section {
-		public $type = 'shop-isle-upsell';
-		public function render() {
-
-			$classes = 'accordion-section control-section-' . $this->type;
-			$id = 'shop-isle-upsell-buttons-section';
-
-			?>
-			<li id="accordion-section-<?php echo esc_attr($this->id); ?>" class="<?php echo esc_attr($classes); ?>">
-				<a class="shop-isle-upgrade-to-pro-button" href="http://themeisle.com/themes/shop-isle-pro/" class="button" target="_blank"><?php echo __('View PRO version', 'shop-isle'); ?></a>
-				<a style="width: 80%; margin: 10px auto 10px auto; display: block; text-align: center;" href="http://docs.themeisle.com/article/421-shop-isle-documentation-wordpress-org" class="button" target="_blank">
-				<?php echo __('View Documentation','shop-isle'); ?> </a>
-			</li>
-			<?php
- 		}
-	}
-
-	class ShopIsle_Upsell_Section extends WP_Customize_Control {
-		public function render_content() {
-		}
-	}
-
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
-	/***********************************************/
-	/******************* UPSELL ********************/
-	/***********************************************/
-
-	$wp_customize->add_section( new ShopIsle_Top_Upsells( $wp_customize, 'shop-isle-upsell', array(
-		'priority'   => '-1',
-	) ) );
-
 
 	/******************************/
 	/**********  Header ***********/

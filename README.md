@@ -95,3 +95,7 @@ Copyright (c) 2013 Daniel Eden
 Resource URI: http://daneden.me/animate
 License: MIT
 License URI: http://opensource.org/licenses/MIT
+
+* Upsell section for the customizer
+    Copyright (C) 2016 Justin Tadlock. https://github.com/justintadlock/trt-customizer-pro
+    Licensed under the GNU GENERAL PUBLIC LICENSE
