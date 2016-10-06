@@ -628,16 +628,7 @@ function shop_isle_customize_register( $wp_customize ) {
 		'active_callback' => 'shop_isle_is_not_contact_page',
 	)));
 
-
-	/********************************************************/
-	/************** ADVANCED OPTIONS  ***********************/
-	/********************************************************/
-
-//	$wp_customize->add_panel( 'shop_isle_general_section_panel' , array(
-//		'title'       => __( 'Advanced options', 'shop-isle' ),
-//		'priority'    => 55
-//	));
-
+	
 	/********************************************************/
 	/************** ADVANCED OPTIONS  ***********************/
 	/********************************************************/
