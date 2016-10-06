@@ -131,7 +131,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'shop_isle_front_page_instructions', array(
 		'title'    => __( 'Frontpage settings', 'shop-isle' ),
 		'active_callback' => 'shop_isle_is_not_frontpage',
-		'priority' => 41
+		'priority' => 20
 	) );
 
 	$wp_customize->add_setting( 'shop_isle_front_page_instructions', array(
@@ -592,7 +592,7 @@ function shop_isle_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'shop_isle_contact_page_section', array(
         'title'    => __( 'Contact page', 'shop-isle' ),
-        'priority' => 51
+        'priority' => 99,
     ) );
 
 	/* Contact Form  */
@@ -633,7 +633,7 @@ function shop_isle_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'shop_isle_contact_page_instructions', array(
         'title'    => __( 'Contact page', 'shop-isle' ),
-        'priority' => 51
+        'priority' => 99
     ) );
 
 	$wp_customize->add_setting( 'shop_isle_contact_page_instructions', array(
@@ -664,25 +664,6 @@ function shop_isle_customize_register( $wp_customize ) {
       	'priority'    => 1,
 		'panel'     => 'shop_isle_general_section_panel'
 	));
-
-	$show_on_front = $wp_customize->get_control('show_on_front');
-	$page_on_front = $wp_customize->get_control('page_on_front');
-	$page_for_posts = $wp_customize->get_control('page_for_posts');
-
-	if(!empty($show_on_front)):
-		$show_on_front->section = 'shop_isle_general_section';
-		$show_on_front->priority = 3;
-	endif;
-
-	if(!empty($page_on_front)):
-		$page_on_front->section = 'shop_isle_general_section';
-		$page_on_front->priority = 4;
-	endif;
-
-	if(!empty($page_for_posts)):
-		$page_for_posts->section = 'shop_isle_general_section';
-		$page_for_posts->priority = 5;
-	endif;
 
 	$wp_customize->remove_control('display_header_text');
 
