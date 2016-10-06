@@ -650,10 +650,10 @@ function shop_isle_customize_register( $wp_customize ) {
 	/************** ADVANCED OPTIONS  ***********************/
 	/********************************************************/
 
-	$wp_customize->add_panel( 'shop_isle_general_section_panel' , array(
-		'title'       => __( 'Advanced options', 'shop-isle' ),
-		'priority'    => 55
-	));
+//	$wp_customize->add_panel( 'shop_isle_general_section_panel' , array(
+//		'title'       => __( 'Advanced options', 'shop-isle' ),
+//		'priority'    => 55
+//	));
 
 	/********************************************************/
 	/************** ADVANCED OPTIONS  ***********************/
@@ -661,8 +661,7 @@ function shop_isle_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'shop_isle_general_section' , array(
 		'title'       => __( 'Advanced options', 'shop-isle' ),
-      	'priority'    => 1,
-		'panel'     => 'shop_isle_general_section_panel'
+      	'priority'    => 55,
 	));
 
 	$wp_customize->remove_control('display_header_text');
@@ -728,8 +727,8 @@ function shop_isle_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'shop_isle_404_background', array(
-		'label'    => __( 'Background image', 'shop-isle' ),
-		'section'  => 'shop_isle_404_section',
+		'label'    => __( '404 Page Background image', 'shop-isle' ),
+		'section'  => 'shop_isle_general_section',
 		'priority'    => 11,
 	)));
 
@@ -741,8 +740,8 @@ function shop_isle_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_control( 'shop_isle_404_title', array(
-		'label'    => __( 'Title', 'shop-isle' ),
-		'section'  => 'shop_isle_404_section',
+		'label'    => __( '404 Page Title', 'shop-isle' ),
+		'section'  => 'shop_isle_general_section',
 		'priority'    => 12,
 	));
 
@@ -755,8 +754,8 @@ function shop_isle_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'shop_isle_404_text', array(
 		'type' 		   => 'textarea',
-		'label'    => __( 'Text', 'shop-isle' ),
-		'section'  => 'shop_isle_404_section',
+		'label'    => __( '404 Page Text', 'shop-isle' ),
+		'section'  => 'shop_isle_general_section',
 		'priority'    => 13,
 	));
 
@@ -768,8 +767,8 @@ function shop_isle_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_control( 'shop_isle_404_link', array(
-		'label'    => __( 'Button link', 'shop-isle' ),
-		'section'  => 'shop_isle_404_section',
+		'label'    => __( '404 Page Button link', 'shop-isle' ),
+		'section'  => 'shop_isle_general_section',
 		'priority'    => 14,
 	));
 
@@ -781,11 +780,10 @@ function shop_isle_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_control( 'shop_isle_404_label', array(
-		'label'    => __( 'Button label', 'shop-isle' ),
-		'section'  => 'shop_isle_404_section',
+		'label'    => __( '404 Page Button label', 'shop-isle' ),
+		'section'  => 'shop_isle_general_section',
 		'priority'    => 15,
 	));
-
 }
 
 /**
