@@ -36,6 +36,20 @@ function shop_isle_customize_register( $wp_customize ) {
 		}
 	}
 
+	class ShopIsle_Theme_Info extends WP_Customize_Control {
+		public $type = 'info';
+		public $label = '';
+		public function render_content() {
+			echo '<div class="shopisle-theme-info">';
+			echo sprintf( '<a href="http://docs.themeisle.com/article/184-shopisle-documentation" target="_blank">%s</a>', esc_html__( 'View Documentation', 'shop-isle' ) );
+			echo '<hr/>';
+			echo sprintf( '<a href="http://themeisle.com/demo/?theme=ShopIsle" target="_blank">%s</a>', esc_html__( 'View Demo', 'shop-isle' ) );
+			echo '<hr/>';
+			echo sprintf( '<a href="http://docs.themeisle.com/article/472-what-is-the-difference-between-shop-isle-and-shopisle-pro/" target="_blank">%s</a>', esc_html__( 'Free VS Pro', 'shop-isle' ) );
+			echo '</div>';
+		}
+	}
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -753,6 +767,26 @@ function shop_isle_customize_register( $wp_customize ) {
 		'section'  => 'shop_isle_general_section',
 		'priority'    => 15,
 	));
+
+
+	/*********************************/
+	/*********  Theme Info  **********/
+	/*********************************/
+	$wp_customize->add_section('shop_isle_theme_info', array(
+			'title' => __('Theme info', 'shop_isle'),
+			'priority' => 0,
+		)
+	);
+	$wp_customize->add_setting('shop_isle_theme_info', array(
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( new ShopIsle_Theme_Info( $wp_customize, 'shop_isle_theme_info', array(
+			'section' => 'shop_isle_theme_info',
+			'settings' => 'shop_isle_theme_info',
+			'priority' => 10
+		) )
+	);
 }
 
 /**

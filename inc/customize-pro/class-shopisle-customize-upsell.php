@@ -73,7 +73,7 @@ final class Shopisle_Customizer_Upsell {
 		$manager->add_section( new Shopisle_Customizer_Upsell_Pro( $manager, 'shopisle-upsell',
 				array(
 					'upsell_title' => __('View PRO version', 'shop-isle'),
-					'label_url' => 'http://themeisle.com/themes/shop-isle-pro/#pricing',
+					'label_url' => 'http://themeisle.com/themes/shop-isle-pro/',
 					'label_text' => __('Get it', 'shop-isle'),
 				)
 			)
