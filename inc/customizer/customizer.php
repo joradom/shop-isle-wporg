@@ -130,6 +130,7 @@ function shop_isle_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'shop_isle_front_page_instructions', array(
 		'title'    => __( 'Frontpage settings', 'shop-isle' ),
+		'active_callback' => 'shop_isle_is_not_frontpage',
 		'priority' => 41
 	) );
 
@@ -806,13 +807,40 @@ function shop_isle_customize_register( $wp_customize ) {
 
 }
 
+/**
+ * Check if isn't contact page.
+ *
+ * @return bool
+ */
 function shop_isle_is_contact_page() { 
 	return is_page_template('template-contact.php');
 };
+
+/**
+ * Check if isn't contact page.
+ *
+ * @return bool
+ */
 function shop_isle_is_not_contact_page() { 
 	return !is_page_template('template-contact.php');
 };
 
+/**
+ * Check if isn't frontpage.
+ *
+ * @return bool
+ */
+function shop_isle_is_not_frontpage() {
+	return !(is_front_page() && is_page_template('template-frontpage.php'));
+};
+
+/**
+ * Repeater sanitization.
+ *
+ * @param $input
+ *
+ * @return mixed|string|void
+ */
 function shop_isle_sanitize_repeater($input){
 	  
 	$input_decoded = json_decode($input,true);
