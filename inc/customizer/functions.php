@@ -377,3 +377,6 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 	}
 
 endif;
+
+/* Customizer upsell. */
+require_once( trailingslashit( get_template_directory() ) . 'inc/customize-pro/class-shopisle-customize-upsell.php' );
