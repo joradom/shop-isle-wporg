@@ -60,8 +60,6 @@ function shop_isle_customize_register( $wp_customize ) {
 		}
 	}
 
-	$wp_customize->get_section( 'colors' )->description         = ''
-
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
