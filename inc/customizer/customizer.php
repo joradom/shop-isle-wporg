@@ -46,6 +46,8 @@ function shop_isle_customize_register( $wp_customize ) {
 			echo sprintf( '<a href="http://themeisle.com/demo/?theme=ShopIsle" target="_blank">%s</a>', esc_html__( 'View Demo', 'shop-isle' ) );
 			echo '<hr/>';
 			echo sprintf( '<a href="http://docs.themeisle.com/article/472-what-is-the-difference-between-shop-isle-and-shopisle-pro/" target="_blank">%s</a>', esc_html__( 'Free VS Pro', 'shop-isle' ) );
+			echo '<hr/>';
+			echo sprintf( '<a href="https://wordpress.org/support/theme/shop-isle/reviews/#new-post/" target="_blank">%s</a>', esc_html__( 'Leave a review', 'shop-isle' ) );
 			echo '</div>';
 		}
 	}
