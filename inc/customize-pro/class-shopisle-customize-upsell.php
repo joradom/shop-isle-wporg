@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Singleton class for handling the theme's customizer integration.
  *
@@ -95,5 +94,4 @@ final class Shopisle_Customizer_Upsell {
 	}
 }
 
-// Doing this customizer thang!
 Shopisle_Customizer_Upsell::get_instance();

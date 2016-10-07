@@ -50,6 +50,18 @@ function shop_isle_customize_register( $wp_customize ) {
 		}
 	}
 
+	class ShopIsle_Colors_Notice extends WP_Customize_Control {
+		public $type = 'info';
+		public $label = '';
+		public function render_content() {
+			echo '<div class="shopisle-theme-info"><p>' . esc_html__( 'Get full color schemes support for your site in ', 'shop-isle' );
+			echo sprintf( '<a href="http://themeisle.com/themes/shop-isle-pro/" target="_blank">%s</a>', esc_html__( 'ShopIsle PRO', 'shop-isle' ) );
+			echo '<span class="dashicons dashicons-admin-customizer"></span>' . '</p></div>';
+		}
+	}
+
+	$wp_customize->get_section( 'colors' )->description         = ''
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -775,6 +787,23 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new ShopIsle_Theme_Info( $wp_customize, 'shop_isle_theme_info', array(
 			'section' => 'shop_isle_theme_info',
 			'settings' => 'shop_isle_theme_info',
+			'priority' => 10
+		) )
+	);
+
+
+
+	/*********************************/
+	/*******  Colors Notice  *********/
+	/*********************************/
+
+	$wp_customize->add_setting('shop_isle_color_notice', array(
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( new ShopIsle_Colors_Notice( $wp_customize, 'shop_isle_color_notice', array(
+			'section' => 'colors',
+			'settings' => 'shop_isle_color_notice',
 			'priority' => 10
 		) )
 	);
