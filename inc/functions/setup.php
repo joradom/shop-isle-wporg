@@ -113,7 +113,8 @@ if ( ! function_exists( 'shop_isle_setup' ) ) :
 		require_once get_template_directory() . '/class-tgm-plugin-activation.php';
 
         /* Customizer upsell. */
-        require_once get_template_directory() . '/inc/customize-pro/class-customize-upsell.php';
+		require_once( trailingslashit( get_template_directory() ) . 'inc/customize-pro/class-shopisle-customize-upsell.php' );
+
 	}
 endif; // shop_isle_setup
 
@@ -567,4 +568,17 @@ function shop_isle_option_used_for_pro() {
 
 	update_option( 'shop_isle_wporg_flag','true' );
 
+}
+
+/**
+ * Check if theme it's set to static front page
+ *
+ * @return bool
+ */
+function shop_isle_is_not_static_front_page() {
+	$frontpage_id = get_option( 'page_on_front' );
+	if ( get_option( 'show_on_front' ) === 'page' && ! empty( $frontpage_id ) && get_page_template_slug( $frontpage_id ) === 'template-frontpage.php' ) {
+		return true;
+	}
+	return false;
 }

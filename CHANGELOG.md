@@ -1,3 +1,17 @@
+### 1.1.6.10 - 10/10/2016
+
+**Changes:**
+
+- Improved Customizer layout
+
+### 1.1.6.8 - 10/04/2016
+
+**Changes:**
+
+- Fixed issue with hidden products appearing on single product page
+
+- Improved layout for the Select options button for variable products
+
 ### 1.1.6.6 - 24/09/2016
 
 **Changes:**
