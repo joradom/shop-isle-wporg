@@ -115,33 +115,6 @@ if ( ! function_exists( 'shop_isle_setup' ) ) :
         /* Customizer upsell. */
 		require_once( trailingslashit( get_template_directory() ) . 'inc/customize-pro/class-shopisle-customize-upsell.php' );
 
-		/*******************************************/
-		/*************  Welcome screen *************/
-		/*******************************************/
-		if ( is_admin() ) {
-
-			global $shop_isle_required_actions;
-
-			/*
-			 * id - unique id; required
-			 * title
-			 * description
-			 * check - check for plugins (if installed)
-			 * plugin_slug - the plugin's slug (used for installing the plugin)
-			 *
-			 */
-			$shop_isle_required_actions = array(
-				array(
-					"id" => 'shop-isle-req-ac-frontpage-static',
-					"title" => esc_html__( 'Get the one page template' ,'shop-isle' ),
-					"description"=> esc_html__( 'If you just installed Shop Isle, and are not able to see the one page template, please go to Customize -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','shop-isle' ),
-					"check" => shop_isle_is_not_static_front_page()
-				),
-			);
-
-			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
-		}
-
 	}
 endif; // shop_isle_setup
 
