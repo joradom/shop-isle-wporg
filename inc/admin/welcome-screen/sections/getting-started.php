@@ -12,8 +12,6 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<h1 class="shop-isle-welcome-title">Welcome to Shop Isle! <?php if( !empty($shop_isle['Version']) ): ?> <sup id="shop-isle-theme-version"><?php echo esc_attr( $shop_isle['Version'] ); ?> </sup><?php endif; ?></h1>
 
-		<p><?php esc_html_e( 'We want to make sure you have the best experience using Shop Isle and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Shop Isle, as much as we enjoy creating great products.', 'shop-isle' ); ?>
-
 	</div>
 
 	<hr />
@@ -120,7 +118,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<h1><?php esc_html_e( 'View full documentation', 'shop-isle' ); ?></h1>
 		<p><?php esc_html_e( 'Need more details? Please check our full documentation for detailed information on how to use Shop Isle.', 'shop-isle' ); ?></p>
-		<p><a href="<?php echo esc_url( 'http://themeisle.com/documentation-shop-isle/' ); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Read full documentation', 'shop-isle' ); ?></a></p>
+		<p><a href="<?php echo esc_url( 'http://docs.themeisle.com/article/421-shop-isle-documentation-wordpress-org' ); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Read full documentation', 'shop-isle' ); ?></a></p>
 
 	</div>
 
@@ -144,7 +142,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 		}
 		else { ?>
 
-				<p><a href="http://themeisle.com/plugins/shop-isle-companion/" target="_blank" class="button button-primary"><?php esc_html_e( 'Install Shop Isle Companion', 'shop-isle' ); ?></a></p>
+				<p><a href="http://themeisle.com/plugins/shop-isle-companion/" target="_blank" class="button button-primary"><?php esc_html_e( 'Download Shop Isle Companion', 'shop-isle' ); ?></a></p>
 
 			<?php
 		}

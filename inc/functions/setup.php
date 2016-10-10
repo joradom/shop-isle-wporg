@@ -120,7 +120,7 @@ if ( ! function_exists( 'shop_isle_setup' ) ) :
 		/*******************************************/
 		if ( is_admin() ) {
 
-			global $shopisle_required_actions;
+			global $shop_isle_required_actions;
 
 			/*
 			 * id - unique id; required
@@ -130,12 +130,12 @@ if ( ! function_exists( 'shop_isle_setup' ) ) :
 			 * plugin_slug - the plugin's slug (used for installing the plugin)
 			 *
 			 */
-			$shopisle_required_actions = array(
+			$shop_isle_required_actions = array(
 				array(
 					"id" => 'shop-isle-req-ac-frontpage-static',
 					"title" => esc_html__( 'Get the one page template' ,'shop-isle' ),
 					"description"=> esc_html__( 'If you just installed Shop Isle, and are not able to see the one page template, please go to Customize -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','shop-isle' ),
-					"check" => shop_isle_is_latest_posts()
+					"check" => shop_isle_is_not_static_front_page()
 				),
 			);
 
@@ -597,7 +597,15 @@ function shop_isle_option_used_for_pro() {
 
 }
 
-/* Front page check */
-function shop_isle_is_latest_posts() {
-	return ('posts' == get_option( 'show_on_front' ) ? false : true );
+/**
+ * Check if theme it's set to static front page
+ *
+ * @return bool
+ */
+function shop_isle_is_not_static_front_page() {
+	$frontpage_id = get_option( 'page_on_front' );
+	if ( get_option( 'show_on_front' ) === 'page' && ! empty( $frontpage_id ) && get_page_template_slug( $frontpage_id ) === 'template-frontpage.php' ) {
+		return true;
+	}
+	return false;
 }

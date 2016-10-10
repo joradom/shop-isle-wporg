@@ -41,7 +41,7 @@ function shop_isle_customize_register( $wp_customize ) {
 		public $label = '';
 		public function render_content() {
 			echo '<div class="shopisle-theme-info">';
-			echo sprintf( '<a href="http://docs.themeisle.com/article/184-shopisle-documentation" target="_blank">%s</a>', esc_html__( 'View Documentation', 'shop-isle' ) );
+			echo sprintf( '<a href="http://docs.themeisle.com/article/421-shop-isle-documentation-wordpress-org" target="_blank">%s</a>', esc_html__( 'View Documentation', 'shop-isle' ) );
 			echo '<hr/>';
 			echo sprintf( '<a href="http://themeisle.com/demo/?theme=ShopIsle" target="_blank">%s</a>', esc_html__( 'View Demo', 'shop-isle' ) );
 			echo '<hr/>';

@@ -67,7 +67,7 @@
             <tr>
                 <td>
                     <h3><?php esc_html_e( 'Shortcode section','shop-isle' ); ?></h3>
-                    <p><?php esc_html_e( 'You can create a section by adding shortcode from plugins.','shop-isle' ); ?></p>
+                    <p><?php esc_html_e( 'Create your own section using an unlimited number of shortcodes, from every plugin you want.','shop-isle' ); ?></p>
                 </td>
                 <td><span class="dashicons-before dashicons-no-alt"></span></td>
                 <td><span class="dashicons-before dashicons-yes"></span></td>
