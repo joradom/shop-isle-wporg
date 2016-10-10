@@ -1,3 +1,9 @@
+### 1.1.6.11 - 10/10/2016
+
+**Changes:**
+
+- Changed some strings in customizer to better fit the layout
+
 ### 1.1.6.10 - 10/10/2016
 
 **Changes:**
