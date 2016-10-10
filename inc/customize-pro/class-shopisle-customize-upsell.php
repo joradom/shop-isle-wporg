@@ -85,8 +85,8 @@ final class Shopisle_Customizer_Upsell {
 		$manager->add_section( new Shopisle_Customizer_Upsell_Frontpage_Sections( $manager, 'shopisle-upsell-frontpage-sections',
 				array(
 					'upsell_link_url_before'    => esc_url('http://themeisle.com/themes/shop-isle-pro'),
-					'upsell_link_text_before'   => __('Pro Version', 'shop-isle') ,
-					'upsell_text'               => __(' adds 4 new sections, the ability to re-order existing ones and easily add custom content to frontpage.', 'shop-isle'),
+					'upsell_link_text_before'   => __('View PRO version', 'shop-isle') ,
+					'upsell_text'               => __('It adds 4 new sections, the ability to re-order existing ones and easily add custom content to frontpage.', 'shop-isle'),
 					'panel'                     => 'shop_isle_front_page_sections',
 					'priority'                  => 500,
 				)
