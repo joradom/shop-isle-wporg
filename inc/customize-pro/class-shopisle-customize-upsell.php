@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Singleton class for handling the theme's customizer integration.
  *
@@ -65,9 +64,12 @@ final class Shopisle_Customizer_Upsell {
 
 		// Load custom sections.
 		require_once( trailingslashit( get_template_directory() ) . 'inc/customize-pro/class-shopisle-customize-upsell-pro.php' );
+		require_once( trailingslashit( get_template_directory() ) . 'inc/customize-pro/class-shopisle-customize-upsell-frontpage-sections.php' );
 
 		// Register custom section types.
 		$manager->register_section_type( 'Shopisle_Customizer_Upsell_Pro' );
+		$manager->register_section_type( 'Shopisle_Customizer_Upsell_Frontpage_Sections' );
+
 
 		// Register sections.
 		$manager->add_section( new Shopisle_Customizer_Upsell_Pro( $manager, 'shopisle-upsell',
@@ -75,6 +77,18 @@ final class Shopisle_Customizer_Upsell {
 					'upsell_title' => __('View PRO version', 'shop-isle'),
 					'label_url' => 'http://themeisle.com/themes/shop-isle-pro/',
 					'label_text' => __('Get it', 'shop-isle'),
+				)
+			)
+		);
+
+		// Register sections.
+		$manager->add_section( new Shopisle_Customizer_Upsell_Frontpage_Sections( $manager, 'shopisle-upsell-frontpage-sections',
+				array(
+					'upsell_link_url_before'    => esc_url('http://themeisle.com/themes/shop-isle-pro'),
+					'upsell_link_text_before'   => __('Pro Version', 'shop-isle') ,
+					'upsell_text'               => __(' adds 4 new sections, the ability to re-order existing ones and easily add custom content to frontpage.', 'shop-isle'),
+					'panel'                     => 'shop_isle_front_page_sections',
+					'priority'                  => 500,
 				)
 			)
 		);
@@ -95,5 +109,4 @@ final class Shopisle_Customizer_Upsell {
 	}
 }
 
-// Doing this customizer thang!
 Shopisle_Customizer_Upsell::get_instance();
