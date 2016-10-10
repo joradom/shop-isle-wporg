@@ -1,3 +1,9 @@
+### 1.1.6.10 - 10/10/2016
+
+**Changes:**
+
+- Improved Customizer layout
+
 ### 1.1.6.8 - 10/04/2016
 
 **Changes:**
