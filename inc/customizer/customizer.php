@@ -776,17 +776,17 @@ function shop_isle_customize_register( $wp_customize ) {
 	/*********  Theme Info  **********/
 	/*********************************/
 	$wp_customize->add_section('shop_isle_theme_info', array(
-			'title' => __('Theme info', 'shop_isle'),
+			'title' => __('Theme info', 'shop-isle'),
 			'priority' => 0,
 		)
 	);
 	$wp_customize->add_setting('shop_isle_theme_info', array(
 			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'shop_isle_sanitize_text'
 		)
 	);
 	$wp_customize->add_control( new ShopIsle_Theme_Info( $wp_customize, 'shop_isle_theme_info', array(
 			'section' => 'shop_isle_theme_info',
-			'settings' => 'shop_isle_theme_info',
 			'priority' => 10
 		) )
 	);
@@ -799,11 +799,11 @@ function shop_isle_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('shop_isle_color_notice', array(
 			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'shop_isle_sanitize_text'
 		)
 	);
 	$wp_customize->add_control( new ShopIsle_Colors_Notice( $wp_customize, 'shop_isle_color_notice', array(
 			'section' => 'colors',
-			'settings' => 'shop_isle_color_notice',
 			'priority' => 10
 		) )
 	);
