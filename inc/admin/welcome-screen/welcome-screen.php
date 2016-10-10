@@ -147,7 +147,7 @@ class Shop_Isle_Welcome {
 	 */
 	public function shop_isle_dismiss_required_action_callback() {
 
-		global $shop_isle__required_actions;
+		global $shop_isle_required_actions;
 
 		$shop_isle_dismiss_id = (isset($_GET['dismiss_id'])) ? $_GET['dismiss_id'] : 0;
 

@@ -11,7 +11,7 @@ jQuery(document).ready(function() {
     jQuery(".shop-isle-dismiss-required-action").click(function(){
 
         var id= jQuery(this).attr('id');
-        console.log(id);
+
         jQuery.ajax({
             type       : "GET",
             data       : { action: 'shop_isle_dismiss_required_action',dismiss_id : id },
