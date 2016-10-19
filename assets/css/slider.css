@@ -2,8 +2,8 @@
 General Styles - FlexSlider
 ------------------------------------------------------------------- */
 
-.flex-direction-nav a,
-.flex-control-nav > li > a {
+.hero-slider .flex-direction-nav a,
+.hero-slider .flex-control-nav > li > a {
 	-webkit-transition: all 0.3s ease-in-out 0s;
 	   -moz-transition: all 0.3s ease-in-out 0s;
 		-ms-transition: all 0.3s ease-in-out 0s;
@@ -11,7 +11,7 @@ General Styles - FlexSlider
 			transition: all 0.3s ease-in-out 0s;
 }
 
-.flex-direction-nav a {
+.hero-slider .flex-direction-nav a {
 	position: absolute;
 	display: block;
 	height: 100%;
@@ -23,8 +23,7 @@ General Styles - FlexSlider
 	margin:0;
 }
 
-
-.flex-direction-nav .flex-prev {
+.hero-slider .flex-direction-nav .flex-prev {
 	opacity: 0;
 	left: 0;
 	cursor: grab;
@@ -36,7 +35,7 @@ General Styles - FlexSlider
 	_cursor: url(../images/prev-light.cur) 40 40, n-resize; /* IE 6 */
 }
 
-.flex-direction-nav .flex-next {
+.hero-slider .flex-direction-nav .flex-next {
 	opacity: 0;
 	right: 0;
 	cursor: grab;
@@ -48,16 +47,16 @@ General Styles - FlexSlider
 	_cursor: url(../images/next-light.cur) 40 40, n-resize; /* IE 6 */
 }
 
-.flex-direction-nav li .flex-disabled {
+.hero-slider .flex-direction-nav li .flex-disabled {
 	cursor: default;
 }
 
-.flex-direction-nav .flex-next.flex-disabled,
-.flex-direction-nav .flex-prev.flex-disabled {
+.hero-slider .flex-direction-nav .flex-next.flex-disabled,
+.hero-slider .flex-direction-nav .flex-prev.flex-disabled {
 	cursor: default;
 }
 
-.flex-control-nav {
+.hero-slider .flex-control-nav {
 	position: absolute;
 	width: auto;
 	left: 50%;
@@ -72,12 +71,12 @@ General Styles - FlexSlider
 
 }
 
-.flex-control-nav > li {
+.hero-slider .flex-control-nav > li {
 	display: inline-block;
 	margin: 5px 3px;
 }
 
-.flex-control-nav > li > a {
+.hero-slider .flex-control-nav > li > a {
 	background: transparent;
 	border: 1px solid #fff;
 	display: block;
@@ -88,12 +87,12 @@ General Styles - FlexSlider
 	        border-radius: 6px;
 }
 
-.flex-control-nav > li > a:hover,
-.flex-control-nav > li > a.flex-active {
+.hero-slider .flex-control-nav > li > a:hover,
+.hero-slider .flex-control-nav > li > a.flex-active {
 	background: #fff;
 }
 
-.home-slider-overlay {
+.hero-slider .home-slider-overlay {
 	display: none;
 }
 
@@ -106,7 +105,7 @@ General Styles - FlexSlider
 	#home .hero-slider {
 		position: fixed;
 	}
-	.home-slider-overlay {
+	.hero-slider .home-slider-overlay {
 		display: block;
 	    position: absolute;
 	    background: rgba(0,0,0,1);
@@ -165,8 +164,7 @@ Hero Slider
 }
 
 /* Caption */
-
-.hs-caption {
+.hero-slider .hs-caption {
 	position: relative;
 	display: table;
 	height: 100%;
@@ -174,7 +172,7 @@ Hero Slider
 	margin: 0 auto;
 }
 
-.hs-caption {
+.hero-slider .hs-caption {
 	position: relative;
 	display: table;
 	height: 100%;
@@ -182,7 +180,7 @@ Hero Slider
 	margin: 0 auto;
 }
 
-.caption-content {
+.hero-slider .caption-content {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
