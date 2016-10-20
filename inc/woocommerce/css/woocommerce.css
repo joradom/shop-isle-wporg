@@ -2591,7 +2591,7 @@ Single product page
 ****/
 .woocommerce.single-product .price ins {
 	width: 	100%;
-	float: left;
+    display: block;;
 }
 .woocommerce.single-product .price ins .amount {
 	text-decoration: none;
@@ -2613,7 +2613,7 @@ Single product page
 }
 .woocommerce.single-product .price del {
 	width: 	100%;
-	float: left;
+    display: block;;
 }
 .woocommerce.single-product .price del .amount {
 	font-size: 20px;
