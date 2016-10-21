@@ -276,6 +276,18 @@ ul.products li.product .button {
 .single-product div.product table.variations td.label label {
     font-size: 12px;
     font: 400 12px/1.8 "Open Sans", sans-serif;
+    font-weight: 600;
+}
+
+.single-product div.product table.variations a.reset_variations {
+    border-color: #eee #eee #ddd;
+    background-color: #eee;
+    text-decoration: none;
+    padding: 8px 20px;
+    margin-left: 10px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 
 .single-product div.product table.variations .value {
@@ -2579,7 +2591,7 @@ Single product page
 ****/
 .woocommerce.single-product .price ins {
 	width: 	100%;
-	float: left;
+    display: block;;
 }
 .woocommerce.single-product .price ins .amount {
 	text-decoration: none;
@@ -2588,9 +2600,20 @@ Single product page
 	width: 100%;
 	color: #666;
 }
+.woocommerce.single-product .product-type-variable .price ins  {
+    text-decoration: none;
+    font-size: 32px;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.woocommerce.single-product .product-type-variable .price ins .amount {
+    float: none;
+    width: auto;
+}
 .woocommerce.single-product .price del {
 	width: 	100%;
-	float: left;
+    display: block;;
 }
 .woocommerce.single-product .price del .amount {
 	font-size: 20px;

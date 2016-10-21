@@ -51,7 +51,9 @@
 				if (homeSection.hasClass('home-full-height')) {
 					homeSection.height($(window).height());
 				} else {
-					homeSection.height($(window).height() * 0.85);
+					if ( !homeSection.hasClass('home-slider-plugin') ) {
+                        homeSection.height($(window).height() * 0.85);
+                    }
 				}
 			} else {
 				if( $('body.page-template-template-frontpage' ).length>0 && homeSection.length<1 ) {
