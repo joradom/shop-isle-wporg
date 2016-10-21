@@ -375,6 +375,11 @@
 			$menuWrap.find('.'+submenuOpenClass).removeClass(submenuOpenClass);
 		});
 
+		/* Visible arrow on mobile */
+		if( mobileTest == true && $( '.flex-direction-nav' ).length>0 ) {
+			$('.flex-direction-nav').addClass('visible-arrow');
+		}
+
 	});
 
 	$("#review_form form :input").each(function(index, elem) {

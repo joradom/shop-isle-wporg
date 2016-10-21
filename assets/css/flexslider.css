@@ -68,8 +68,11 @@ html[xmlns] .slides {display: block;}
 .hero-slider .flexslider:hover .flex-next { opacity: 0.7; right: 10px; }
 .hero-slider .flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover { opacity: 1; }
 .hero-slider .flex-direction-nav .flex-disabled { opacity: 0!important; filter:alpha(opacity=0); cursor: default; }
-.hero-slider .flex-direction-nav a:before  { font-family: "flexslider-icon"; font-size: 40px; line-height:1; display: inline-block; content: '\f001'; }
+.hero-slider .flex-direction-nav a:before  { font-family: "flexslider-icon"; font-size: 16px; line-height:1; display: inline-block; content: '\f001'; }
 .hero-slider .flex-direction-nav a.flex-next:before  { content: '\f002'; }
+.hero-slider .flex-direction-nav.visible-arrow .flex-next, .hero-slider .flex-direction-nav.visible-arrow .flex-prev {opacity: 1 !important; }
+.hero-slider .flex-direction-nav.visible-arrow a.flex-prev:before { position: absolute; top: 50%; left: 10px; padding: 4px 7px; background: rgba(255, 255, 255, 0.25); border-radius: 2px; }
+.hero-slider .flex-direction-nav.visible-arrow a.flex-next:before { position: absolute; top: 50%; right: 10px; padding: 4px 7px; background: rgba(255, 255, 255, 0.25); border-radius: 2px; }
 
 /* Pause/Play */
 .hero-slider .flex-pauseplay a { display: block; width: 20px; height: 20px; position: absolute; bottom: 5px; left: 10px; opacity: 0.8; z-index: 10; overflow: hidden; cursor: pointer; color: #000; }
