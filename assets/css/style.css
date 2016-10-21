@@ -2139,6 +2139,10 @@ Home Section
 	margin-bottom: 40px;
 }
 
+.content-box-image:hover {
+	opacity: 0.8;
+}
+
 .module-small.home-banners {
     padding: 70px 0 30px;
 }
