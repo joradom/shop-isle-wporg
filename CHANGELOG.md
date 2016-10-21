@@ -1,3 +1,13 @@
+### 1.1.6.12 - 21/10/2016
+
+**Changes:**
+
+- Compatibility for the NEW option to allow a shortcode instead of the main slider (available in the Shop Isle Companion plugin )
+
+- Improved product page for variable products
+
+- Improved main slider arrows layout
+
 ### 1.1.6.11 - 10/10/2016
 
 **Changes:**
