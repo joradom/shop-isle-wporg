@@ -2,7 +2,7 @@
 /**
  * The template for displaying full width pages.
  *
- * Template Name: Template Name: Full width, no title (SiteOrigin Page builder Template)
+ * Template Name: Full width, no title (SiteOrigin Page builder Template)
  *
  */
 
