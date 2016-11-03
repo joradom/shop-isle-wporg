@@ -1,3 +1,13 @@
+### 1.1.6.13 - 03/11/2016
+
+**Changes:**
+
+- Added Siteorigin compatibility + new template page for Siteorigin
+
+- Made slider arrows visible on mobile devices
+
+- Added hover effects on the banners section on frontpage
+
 ### 1.1.6.12 - 21/10/2016
 
 **Changes:**
