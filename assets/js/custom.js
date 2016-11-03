@@ -376,7 +376,7 @@
 		});
 
 		/* Visible arrow on mobile */
-		if( mobileTest == true && $( '.flex-direction-nav' ).length>0 ) {
+		if( mobileTest == true && $( '.flex-direction-nav' ).length>0 && $( 'ul.slides > li' ).length>1 ) {
 			$('.flex-direction-nav').addClass('visible-arrow');
 		}
 

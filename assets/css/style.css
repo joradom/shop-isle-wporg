@@ -2137,10 +2137,18 @@ Home Section
 
 .content-box-image {
 	margin-bottom: 40px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 .content-box-image:hover {
 	opacity: 0.8;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 .module-small.home-banners {
@@ -4108,7 +4116,7 @@ SiteOrigin Page Builder styles
 .siteorigin-panels.page-template-template-fullwidth-no-title .main > .module {
     padding: 50px 0 0;
 }
-.siteorigin-panels .widget li:before {
+.siteorigin-panels.page-template-template-fullwidth-no-title .widget li:before {
     display: none;
 }
 
