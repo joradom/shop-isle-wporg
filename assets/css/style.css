@@ -4080,6 +4080,18 @@ Scroll to top
 }
 
 /*--------------------------------------------------------------
+404 Error page
+--------------------------------------------------------------*/
+.error-page-background {
+	display: table;
+}
+.error-page-background .hs-caption {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
 	ALIGNMENTS
 --------------------------------------------------------------*/
 .alignleft {
