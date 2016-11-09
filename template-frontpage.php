@@ -445,7 +445,7 @@
 	if( empty($shop_isle_yt_thumbnail) ) {
 		$shop_isle_do_video_thumbnail = preg_match( '/\/\/(www\.)?(youtu|youtube)\.(com|be)\/(watch|embed)?\/?(\?v=)?([a-zA-Z0-9\-\_]+)/', $shop_isle_yt_link, $shop_isle_youtube_matches );
 		$shop_isle_youtube_id = ! empty( $shop_isle_youtube_matches ) ? $shop_isle_youtube_matches[6] : '';
-		$shop_isle_yt_thumbnail = 'http://img.youtube.com/vi/' . $shop_isle_youtube_id . '/maxresdefault.jpg';
+		$shop_isle_yt_thumbnail = 'https://img.youtube.com/vi/' . $shop_isle_youtube_id . '/maxresdefault.jpg';
 	}
 
 	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) {
