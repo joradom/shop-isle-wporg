@@ -1,3 +1,10 @@
+### 1.1.6.15 - 09/11/2016
+
+- Fixed issues with 404 error page
+
+- Use HTTPS protocol for video youtube thumbnail
+
+**Changes:**
 ### 1.1.6.13 - 03/11/2016
 
 **Changes:**
